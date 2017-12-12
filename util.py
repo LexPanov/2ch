@@ -7,7 +7,7 @@ from datetime import *
 def get_last_replies():
     return db.session.query(Post).order_by(db.text('id desc'))#.limit(5)
 
-
+"""
 def new_post():
     #post = Post(body = form.post.data, timestamp = datetime.utcnow(), author = g.user)
 
@@ -16,4 +16,10 @@ def new_post():
                     subject = form.post.subject,
                     body    = form.post.data)
     return newPost
+"""
+def delete_post(id):
+    post = db.session.query(Post).filter_by(id=id).one()
+    db.session.delete(post)
+    db.session.commit()
 
+   
