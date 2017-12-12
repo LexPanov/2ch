@@ -46,11 +46,8 @@
         </a>
     </div>
     <hr>
-{% include 'postform.html' %}
 
 <body>  
-
-
     <section class="posts">
         <div class="oppost-wrapper">
             <div class="post oppost" id="post-body-162067754" data-num="162067754">
@@ -71,34 +68,13 @@
                     </div>
                 
                 <blockquote class="post-message">
-                        Это как двач, но только один тред.
+                        User: {{user}}
                 </blockquote>
             </div>
         </div>
 
-{% for entry in posts %}
-        <div class="post-wrapper">
-            <div class="post reply" id="post-body-{{ entry.id }}" data-num="{{ entry.id }}">
-                <div class="post-details" id="post-details-{{ entry.id }}">
-                    <input type="checkbox" name="delete"  class="turnmeoff" value="{{ entry.id }}">
-                    <span class="ananimas">Аноним</span>
-                        <span class="posttime">{{ entry.date }}&nbsp;</span>
-                        <span class="reflink">№{{ '%09d' % entry.id  }}</span>
-                        {% if entry.subject %}
-                        <span> RE:{{entry.subject}} </span>
-                        {% endif %}
-                        <a class="postbtn-report desktop" href="{{ url_for('delete', id = entry.id) }}"  title="Пожаловаться" data-num="166828387"></a>
 
-                </div>
-                <blockquote class="post-message">
-                        {{ entry.body }}
-                </blockquote>                               
-            </div>
-        </div>
-{% endfor %}
-
-
-    </section>
+</section>
 </body>
 
 </html>

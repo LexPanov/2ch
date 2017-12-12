@@ -29,6 +29,18 @@ def index():
     posts = get_last_replies()
     return render_template('show_board.html', form=form, posts=posts[::-1])
 
+@app.route('/user/<nickname>')
+#@login_required
+def user(nickname):
+    user = str(nickname)
+    if user == "None":
+        flash('User ' + "nickname" + ' not found.')
+        return redirect(url_for('index'))
+
+
+    return render_template('user.html',
+        user = user)
+
 @app.route('/delete/<id>')
 def delete(id):
     delete_post(id)
