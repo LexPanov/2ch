@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id=wrap>
+<div id=left>
+
+{% for entry in entries %}
+<div class=post>
+	<div class='byline'>
+		<span>{{ entry.subject }}</span>
+		<span>
+			{{ entry.name }}
+
+		</span>
+		<span>{{ entry.date }}</span>
+			<span><a href=''>#{{ entry.id }}</a></span>
+
+	</div>
+	<div class='post_body' id='{{ entry.id }}'>
+		{{ entry.text|markdown }}
+	</div>
+</div>
+{% endfor %}
+</div>
+
+
+</div>
+{% endblock %}

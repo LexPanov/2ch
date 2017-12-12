@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+	<title>/b/ - Бред</title>
+	<link id="favicon" rel="shortcut icon" href="http://2ch.hk/favicon.ico">
+	<link href="{{ url_for('static', filename='makaba.css') }}" title="makaba" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='swag.js') }}?q=155"></script>	
+	<body class="replypage makaba  pace-done">
+
+</head>
+
+{% include 'sidebar.html' %}
+
+<body>	
+
+
+	<section class="posts">
+		<div class="oppost-wrapper">
+			<div class="post oppost" id="post-body-162067754" data-num="162067754">
+				<div class="post-details" id="post-details-162067754">
+					<input type="checkbox" name="delete" class="turnmeoff" value="162067754">
+					<span class="ananimas">Аноним</span>
+						<span class="posttime">30/09/17 Суб 18:21:13&nbsp;</span>
+						<span class="reflink">№162067754</span>
+				</div>
+					<div class="images images-single ">
+							<figure class="image">
+								<div id="exlink-162067754-af066bb0e192adf4d413a3f6b4df905e" class="image-link">
+									<a href="https://2ch.hk/b/src/162067754/15067848732280.jpg" target="_blank" >
+										<img src="{{ url_for('static', filename='15067848732280s.jpg') }}" width="220" height="169" alt="1600x1233" class="img preview  ">
+									</a>
+								</div>
+							</figure>
+					</div>
+				
+				<blockquote class="post-message">
+						Это как двач, но только один тред.
+				</blockquote>
+			</div>
+		</div>
+
+{% for entry in entries %}
+		<div class="post-wrapper">
+			<div class="post reply" id="post-body-{{ entry.id }}" data-num="{{ entry.id }}">
+				<div class="post-details" id="post-details-{{ entry.id }}">
+					<input type="checkbox" name="delete"  class="turnmeoff" value="{{ entry.id }}">
+					<span class="ananimas">Аноним</span>
+						<span class="posttime">{{ entry.date }}&nbsp;</span>
+						<span class="reflink">{{ '%09d' % entry.id  }}</span>
+
+				</div>
+				<blockquote class="post-message">
+						{{ entry.text }}
+				</blockquote>								
+			</div>
+		</div>
+{% endfor %}
+
+
+	</section>
+</body>
+
+</html>

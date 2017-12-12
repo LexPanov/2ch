@@ -1,0 +1,8 @@
+<span id=right>
+	<form action="{{ url_for('add_reply') }}" enctype=multipart/form-data method=post>
+		<input type=text name=name placeholder=Name>
+		<input type=text name=subject placeholder=Subject>
+		<textarea id=comment name=post_content rows=8></textarea>
+		<input type=submit value=Reply style='width: 100%'>
+	</form>
+</span>
