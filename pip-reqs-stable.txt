@@ -1,0 +1,15 @@
+circus==0.14.0
+Flask==0.10.1
+Flask-SQLAlchemy==2.1
+gunicorn==19.7.1
+iowait==0.2
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+pipdeptree==0.10.1
+psutil==5.3.1
+pyzmq==16.0.2
+SQLAlchemy==1.1.14
+sqlite3==0.0.0
+tornado==4.5.2
+Werkzeug==0.12.2
