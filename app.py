@@ -4,15 +4,14 @@ from datetime import datetime
 from flask.ext.misaka import Misaka
 
 app = Flask(__name__)
+"""
 Misaka(app=app, escape    = True,
                 no_images = True,
                 wrap      = True,
                 autolink  = True,
                 no_intra_emphasis = True,
                 space_headers     = True)
-
-#from werkzeug.contrib.fixers import ProxyFix
-#app.wsgi_app = ProxyFix(app.wsgi_app)
+"""
 
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)

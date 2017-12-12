@@ -1,1 +1,2 @@
-OH SHI~ IT'S \n# octochan
+OH SHI~ IT'S 
+# octochan
