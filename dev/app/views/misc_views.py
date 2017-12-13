@@ -14,7 +14,7 @@ from app.models.user_models import UserProfileForm
 main_blueprint = Blueprint('main', __name__, template_folder='templates')
 
 # The Home page is accessible to anyone
-@main_blueprint.route('/')
+@main_blueprint.route('/', methods = ['GET', 'POST'])
 def home_page():
     return render_template('pages/home_page.html')
 
