@@ -10,7 +10,7 @@ from flask import current_app
 from flask_script import Command
 
 from app import db
-from app.models.user_models import User, Role
+from app.models.user_models import User#, Role
 
 class InitDbCommand(Command):
     """ Initialize the database."""
@@ -32,16 +32,16 @@ def create_users():
     db.create_all()
 
     # Adding roles
-    admin_role = find_or_create_role('admin', u'Admin')
+    #admin_role = find_or_create_role('admin', u'Admin')
 
     # Add users
-    user = find_or_create_user(u'Admin', u'Example', u'admin@example.com', 'Password1', admin_role)
+    user = find_or_create_user(u'Admin', u'Example', u'admin@example.com', 'Password1', 1)
     user = find_or_create_user(u'Member', u'Example', u'member@example.com', 'Password1')
 
     # Save to DB
     db.session.commit()
 
-
+'''
 def find_or_create_role(name, label):
     """ Find existing role or create new role """
     role = Role.query.filter(Role.name == name).first()
@@ -49,9 +49,9 @@ def find_or_create_role(name, label):
         role = Role(name=name, label=label)
         db.session.add(role)
     return role
+'''
 
-
-def find_or_create_user(first_name, last_name, username, password, role=None):
+def find_or_create_user(first_name, last_name, username, password, roleid = 0):
     """ Find existing user or create new user """
     user = User.query.filter(User.username == username).first()
     if not user:
@@ -60,9 +60,9 @@ def find_or_create_user(first_name, last_name, username, password, role=None):
                     last_name=last_name,
                     password=current_app.user_manager.hash_password(password),
                     active=True,
-                    confirmed_at=datetime.datetime.utcnow())
-        if role:
-            user.roles.append(role)
+                    confirmed_at=datetime.datetime.utcnow(),
+                    role=roleid)
+
         db.session.add(user)
     return user
 

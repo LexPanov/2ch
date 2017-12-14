@@ -4,68 +4,69 @@
     <div class="logo">
         <a href="/" style="text-decoration:none;color:inherit;">
             <span id="title">
-                Бред
+                Бред.
             </span>
         </a>
     </div>
     <hr>
+
 <header>
+
     <div class="norm-reply">
         <div class="reply-label-wrapper">
             <span class="desktop">[<span class="reply-label reply-label-top">Ответить в тред</span>]</span>
+            <span class="desktop favorite-board" style="display:none;">[ <i title="Добавить в мои доски" class="fa postbtn-favorite-board fa-star" data-num="" style="display: inline-block;"></i> ]</span>
+
         </div>
 
         <div id="TopNormalReply" class="TopNormalReply"></div>
-        <form id="postform" class="postform tmp_postform" action="" method="post" enctype="multipart/form-data" style="display: all;">
+
+        <form id="postform" class="postform tmp_postform" action="{{ url_for('main.home_page') }}" method="post" enctype="multipart/form-data" style="display: none;">
             {{ form.hidden_tag() }}
             <hr class="postform-hr">
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-1">
-
-                        <label for="e-mail">Тема</label>
-        </div>
-        <div class="col-lg-7 ">
-                            {{ form.subject(id="e-mail", type="text", value="", size="36", placeholder="Название. Макс. длина 50")}}
-        </div>
-        <div class="col-lg-1 ">
+            <table>
+                <tbody>
+                    <tr class="mail">
+                        <td class="label desktop"><label for="e-mail">Тема</label></td>
+                        <td>
+                            {{ form.subject(id="e-mail", type="text", value="", size="30", placeholder="Название. Макс. длина 50")}}
                             <input type="submit" id="submit" name="submit" value="Отправить" class="desktop">
+                        </td>
+                    </tr>
 
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-1">
-                        <label for="shampoo">Пост</label>
-        </div>
-        <div class="col-lg-5 ">
-                            {{ form.body( id="shampoo", rows="10",cols="45", placeholder="Комментарий. Макс. длина 150")}}
-
-
-        </div>
-    </div>
-
-    <div class="row">
+                    <tr class="comment-area">
+                        <td class="label desktop">
+                            <label for="shampoo">Пост</label>
+                        </td>
+                        <td class="symbol-counter">
+                            <div class="message-sticker-preview"></div>
+                            <span class="message-byte-len">150</span>
+                            
+                            {{ form.body( id="shampoo", rows="10", placeholder="Комментарий. Макс. длина 150")}}
+                        </td>
+                    </tr>
 
 
+
+                    <tr class="rules-area">
                         <td colspan="2">
                           <span class="rules">Перед отправкой сообщения прочтите <a href="https://2ch.hk/faq.html" target="_blank">FAQ</a>, <a href="https://2ch.hk/faq/faq_b.html" target="_blank">FAQ раздела</a> и <a href="https://2ch.hk/rules.html" target="_blank">правила раздела</a>.</span><br>
                           <span class="rules"><a >vk.com/ru2ch</a> - оФФициальная группа VK </span><br>
                           <span class="rules"><a >2channel.hk</a> - Пасскодач</span><br>
                         </td>
-
-
-    </div>
-</div>
-
+                        
+                    </tr>
+                </tbody>
+            </table>
             <hr class="postform-hr">
         </form>
     </div>
     <hr class="postrekl-hr">
 </header>
 
-<body>
+<body>  
+
+
     <section class="posts">
         <div class="oppost-wrapper">
             <div class="post oppost" id="post-body-162067754" data-num="162067754">
@@ -85,32 +86,46 @@
                             </figure>
                     </div>
                 
-
+                <blockquote class="post-message">
                         Это как двач, но только один тред.
-
+                </blockquote>
             </div>
         </div>
-    </section>
-</body>
+
 {% for entry in posts %}
         <div class="post-wrapper">
             <div class="post reply" id="post-body-{{ entry.id }}" data-num="{{ entry.id }}">
                 <div class="post-details" id="post-details-{{ entry.id }}">
                     <input type="checkbox" name="delete"  class="turnmeoff" value="{{ entry.id }}">
-                    <span class="ananimas">Аноним</span>
+                    <span class="ananimas">{{entry.author}}</span>
                         <span class="posttime">{{ entry.date }}&nbsp;</span>
                         <span class="reflink">№{{ '%09d' % entry.id  }}</span>
+                        OWNER: {{entry.owner}}
                         {% if entry.subject %}
                         <span> RE:{{entry.subject}} </span>
                         {% endif %}
-                        <a class="postbtn-report desktop" href=""  title="Пожаловаться" data-num="166828387"></a>
+
+                    {% if current_user.is_authenticated %}
+
+                    {% if current_user.id == entry.owner %}
+                        <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Пожаловаться" data-num="166828387"></a>
+                    {% elif current_user.role == 1 %}
+                        <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Пожаловаться" data-num="166828387"></a>
+                    {% endif %}
+
+                    {% endif %}
 
                 </div>
-<blockquote>
+                <blockquote class="post-message">
                         {{ entry.body }}
-</blockquote>
-                   
+                </blockquote>                               
             </div>
         </div>
 {% endfor %}
+
+
+    </section>
+</body>
 {% endblock %}
+
+

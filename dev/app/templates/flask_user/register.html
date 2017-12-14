@@ -2,6 +2,8 @@
 
 {% block content %}
 {% from "flask_user/_macros.html" import render_field, render_submit_field %}
+<link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='makaba.css') }}" title="makaba" type="text/css" rel="stylesheet">
 <h1>{%trans%}Register{%endtrans%}</h1>
 
 <form action="" method="POST" novalidate formnovalidate class="form" role="form">
@@ -30,9 +32,9 @@
         {% endif %}
     </div>
 
-    {% if user_manager.enable_email and user_manager.enable_username %}
+
         {{ render_field(form.email, tabindex=220) }}
-    {% endif %}
+
 
     {{ render_field(form.first_name, tabindex=240) }}
 

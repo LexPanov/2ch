@@ -25,12 +25,12 @@ class User(db.Model, UserMixin):
     active = db.Column('is_active', db.Boolean(), nullable=False, server_default='0')
     first_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')
     last_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')
+    role = db.Column(db.Integer(), nullable=False,server_default='0')
 
     # Relationships
-    roles = db.relationship('Role', secondary='users_roles',
-                            backref=db.backref('users', lazy='dynamic'))
+    #roles = db.relationship('Role', secondary='users_roles', backref=db.backref('users', lazy='dynamic'))
 
-
+'''
 # Define the Role data model
 class Role(db.Model):
     __tablename__ = 'roles'
@@ -45,7 +45,7 @@ class UsersRoles(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     user_id = db.Column(db.Integer(), db.ForeignKey('users.id', ondelete='CASCADE'))
     role_id = db.Column(db.Integer(), db.ForeignKey('roles.id', ondelete='CASCADE'))
-
+'''
 
 # Define the User registration form
 # It augments the Flask-User RegisterForm with additional fields
@@ -67,6 +67,7 @@ class UserProfileForm(FlaskForm):
 class Post(db.Model):
     __tablename__ = 'posts'
     id        = db.Column(db.Integer, primary_key = True)
+    owner     = db.Column(db.Integer, default = 0)
     date      = db.Column(db.String)
     author    = db.Column(db.String)
     subject   = db.Column(db.String)

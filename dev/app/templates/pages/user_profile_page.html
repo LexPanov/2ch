@@ -1,7 +1,18 @@
 {% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
 
 {% block content %}
-<h1>Привет, {{current_user.first_name}} {{current_user.last_name}}</h1>
+<br>
+<br>
+Привет, 
+    id = {{current_user.id}}<br>
+    username = {{current_user.username}}<br>
+    confirmed_at = {{current_user.confirmed_at}}<br>
+    password = {{current_user.password}}<br>
+    active = {{current_user.active}}<br>
+    first_name = {{current_user.first_name}} <br>
+    last_name = {{current_user.last_name}}<br>
+    role = {{current_user.role}}<br>
+<br>
 
 <p><a href="{{ url_for('user.change_password') }}">Change password</a></p>
 
