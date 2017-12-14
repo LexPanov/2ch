@@ -6,17 +6,31 @@
 from flask import Blueprint, redirect, render_template
 from flask import request, url_for
 from flask_user import current_user, login_required, roles_accepted
-
+from datetime import datetime
 from app import db
-from app.models.user_models import UserProfileForm
+from app.models.user_models import UserProfileForm, Post, PostForm
 
 # When using a Flask app factory we must use a blueprint to avoid needing 'app' for '@app.route'
 main_blueprint = Blueprint('main', __name__, template_folder='templates')
 
+def get_last_replies():
+    return db.session.query(Post).order_by(db.text('id desc'))
+
 # The Home page is accessible to anyone
 @main_blueprint.route('/', methods = ['GET', 'POST'])
 def home_page():
-    return render_template('pages/home_page.html')
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(date    = datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    author  = '',
+                    subject = form.subject.data,
+                    body    = form.body.data)
+        db.session.add(post)
+        db.session.commit()
+
+        return redirect(url_for('main.home_page'))
+    posts = get_last_replies()
+    return render_template('pages/home_page.html', form=form, posts=posts[::-1])
 
 
 # The User page is accessible to authenticated users (users that have logged in)
