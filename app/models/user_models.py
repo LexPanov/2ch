@@ -76,3 +76,4 @@ class PostForm(FlaskForm):
     #name = StringField('name')
     body = TextAreaField('body', validators=[ validators.Length(min=0, max=150)])
     file = FileField('file', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'])])
+    submit = SubmitField('Send')

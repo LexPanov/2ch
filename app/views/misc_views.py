@@ -18,6 +18,8 @@ MAX_AVATAR_SIZE = 400, 400
 
 main_blueprint = Blueprint('main', __name__, template_folder='templates')
 
+
+
 @main_blueprint.route('/', methods = ['GET', 'POST'])
 def home_page():
     form = PostForm()
@@ -25,14 +27,16 @@ def home_page():
         if current_user.is_authenticated:
             author = current_user.username
             owner = current_user.id
+            id = current_user.id
         else:
             author = "Аноним"
             owner = 0
+            id = 0
         filename=''
         if form.file.data:
             data = form.file.data.read()
             hash = blake2s(data, digest_size=16).hexdigest()
-            filename = '{0}-{1}-{2}.jpg'.format(current_user.id,int(time.time()),hash)
+            filename = '{0}-{1}-{2}.jpg'.format(id,int(time.time()),hash)
             path = os.path.join("app/static/img", filename)
             thumb_path = os.path.join("app/static/thumb", filename)
             image_parser = ImageFile.Parser()
@@ -62,6 +66,24 @@ def home_page():
         return redirect(url_for('main.home_page'))
     posts = db.session.query(Post).order_by(db.text('id desc'))
     return render_template('pages/home_page.html', form=form, posts=posts[::-1])
+
+@main_blueprint.route("/edit/<id>", methods = ['GET', 'POST'])
+def edit(id):
+    form = PostForm()
+    post = db.session.query(Post).filter_by(id=id).one()
+    if form.validate_on_submit():
+        post1 = Post(id = 1,
+                    date    = datetime.now().strftime("%d/%m/%y %a %H:%M:%S"),
+                    author  = post.author,
+                    subject = form.subject.data,
+                    body    = form.body.data,
+                    img     = filename
+                    )
+        db.session.delete(post)
+        db.session.add(post1)
+        db.session.commit()
+        return redirect(url_for('main.home_page'))
+    return render_template("pages/edit.html", form=form, post=post)
 
 @main_blueprint.route('/delete/<id>')
 def delete(id):
