@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+    <title>/b/ - Бред</title>
+    <!-- Bootstrap CSS and JS
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">-->
+    <!-- NEW -->
+    <link id="favicon" rel="shortcut icon" href="http://2ch.hk/favicon.ico">
+    <link href="{{ url_for('static', filename='makaba.css') }}" title="makaba" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='swag.js') }}"></script>    
+    <body class="replypage makaba  pace-done">
+    
+    
+</head>
+
+    <body>
+        {% block body %}
+<div>
+    <div class="div1">
+        <div class="adminbar adminbar-top"> 
+            <a href={{ url_for('main.home_page') }}>Главная</a>
+            <a href={{ url_for('user.register') }}>Регистрация</a>
+            <a href={{ url_for('user.login') }}>Вход</a>
+            <a href={{ url_for('main.user_profile_page') }}>Профиль</a> <!--(login_required: member@example.com / Password1)-->
+            <a href={{ url_for('user.logout') }}>Выход</a>
+        </div>
+    </div>
+    <div class="div2">
+            {% if current_user.is_authenticated %}
+                role={{current_user.role}}
+                <a href="{{ url_for('main.user_profile_page') }}">{{ current_user.username }}</a>
+                &nbsp; | &nbsp;
+                <a href="{{ url_for('user.logout') }}">Выход</a>
+            {% else %}
+                <a href="{{ url_for('user.login') }}">Вход</a>
+            {% endif %}
+    </div>
+</div>
+        <div id="main-div" >
+        {% block pre_content %}{% endblock %}
+
+        {% block content %}{% endblock %}
+
+        {% block post_content %}{% endblock %}
+        </div>
+
+        <br/>
+        <!--
+        <hr class="no-margins"/>
+        <div id="footer-div" class="clearfix with-margins">
+            <div class="pull-left">{{ user_manager.app_name }} v1.0</div>
+            <div class="pull-right">&copy; 2014 MyCorp</div>
+        </div>
+        -->
+        <!-- Bootstrap JS -->
+        <script src="{{ url_for('static', filename='bootstrap/js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
