@@ -5,7 +5,8 @@
 from flask_user import UserMixin
 from flask_user.forms import RegisterForm
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, validators
+from flask_wtf.file import FileAllowed
+from wtforms import StringField, TextAreaField, SubmitField, validators, FileField
 from app import db
 
 
@@ -30,7 +31,7 @@ class User(db.Model, UserMixin):
     # Relationships
     #roles = db.relationship('Role', secondary='users_roles', backref=db.backref('users', lazy='dynamic'))
 
-'''
+
 # Define the Role data model
 class Role(db.Model):
     __tablename__ = 'roles'
@@ -45,7 +46,7 @@ class UsersRoles(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     user_id = db.Column(db.Integer(), db.ForeignKey('users.id', ondelete='CASCADE'))
     role_id = db.Column(db.Integer(), db.ForeignKey('roles.id', ondelete='CASCADE'))
-'''
+
 
 # Define the User registration form
 # It augments the Flask-User RegisterForm with additional fields
@@ -72,9 +73,10 @@ class Post(db.Model):
     author    = db.Column(db.String)
     subject   = db.Column(db.String)
     body      = db.Column(db.String)
+    img       = db.Column(db.String)
 
 class PostForm(FlaskForm):
     subject = StringField('subject', validators=[validators.Length(min=0, max=50)])
     #name = StringField('name')
-    body = TextAreaField('body', validators=[validators.DataRequired(), validators.Length(max=1500)])
-    #file = FileField('file', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'])])
+    body = TextAreaField('body', validators=[validators.DataRequired(), validators.Length(max=150)])
+    file = FileField('file', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'])])
