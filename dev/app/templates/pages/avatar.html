@@ -17,30 +17,49 @@
 <!--
 <img src={{url_for('static', filename="avatar/a.jpg" ) }} class="img preview  ">
 -->
-{%if current_user.avatar %}
-<img src={{url_for('static', filename="avatar/" + current_user.avatar ) }} class="img preview  ">
-{% endif %}
-<br>
-<br>
-<p><a href="{{ url_for('main.user_avatar_page') }}">Change avatar</a></p>
+
+
 {% from "common/form_macros.html" import render_field, render_submit_field %}
 
+
+
+        <form id="postform" class="postform tmp_postform" action="{{ url_for('main.user_avatar_page') }}" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <hr class="postform-hr">
+
+
+
+
+
+
+
+<tr class="images-area">
+  <td class="label desktop">
+  </td>
+  <td>
+    {%if current_user.avatar %}
+<img src={{url_for('static', filename="avatar/"+ current_user.avatar ) }} class="img preview  ">
+{% endif %}
 <br>
-<p><a href="{{ url_for('user.change_password') }}">Change password</a></p>
+    {{form.file( id="formimages", class="form-files-input-multi")}}
+  </td>
+</tr>
+<input type="submit" id="submit" name="submit" value="Отправить" class="desktop">
+  
 
 
-<form action="" method="POST" class="form" role="form">
-  <div class="row">
-    <div class="col-sm-6 col-md-5 col-lg-4">
-    {{ form.hidden_tag() }}
 
-    {{ render_field(form.first_name, placeholder = current_user.first_name, tabindex=240) }}
 
-    {{ render_field(form.last_name, placeholder = current_user.last_name, tabindex=250) }}
 
-    {{ render_submit_field(form.submit, tabindex=280) }}
+
+
+
+
+
+
+
+        </form>
     </div>
-  </div>
-</form>
-
+    <hr class="postrekl-hr">
+</header>
 {% endblock %}

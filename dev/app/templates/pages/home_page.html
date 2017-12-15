@@ -4,7 +4,7 @@
     <div class="logo">
         <a href="/" style="text-decoration:none;color:inherit;">
             <span id="title">
-                почтиДвач.
+                Двач.
             </span>
         </a>
     </div>
@@ -61,7 +61,24 @@
     </div>
   </td>
 </tr>
+<!--
+<script>
+  function handle_hover(e) {
+      e.originalEvent.stopPropagation();
+      e.originalEvent.preventDefault();
+      e.target.className = 'form-files-drag-area';
+      $(e.target).addClass(e.type == 'dragover' ? 'hover' : '');
+  }
+$('.form-files-drag-area').on('drag dragstart dragend dragover dragenter dragleave drop', handle_hover)
+                          .on('drop', function(e) {
+                                      handle_hover(e);
+                                      alert(event.originalEvent.dataTransfer.files);
+                                      $('#formimages').click(e.originalEvent.dataTransfer.files[0]);})
 
+                                      //file_select_handler(e.originalEvent.dataTransfer.files[0]);})
+                          .on('click', function() { $('#formimages').click(); });
+</script>
+-->
 
                     <tr class="rules-area">
                         <td colspan="2">
@@ -110,8 +127,7 @@
                     </div>
                 
                 <blockquote class="post-message">
-                        <!--Это как двач, но только один тред.!-->
-                        Тело заглавного сообщения
+                        Это как двач, но только один тред.
                 </blockquote>
             </div>
         </div>
@@ -140,25 +156,26 @@
 
                 </div>
 
-
+{%if entry.img %}
                 <div class="images images-single ">
                     
                         <figure class="image">
+                            <!--
                             <figcaption class="file-attr">
                                 <a class="desktop" target="_blank" href="/b/src/166957697/15132834237990.jpg" id="title-166957697-f9d91536038845d0b867c8eea56b696e" title="668AE0AF-8B16-4626-B74A-74C7B037A6AF.jpeg"> 668AE0AF-8B16-4[...].jpeg</a> 
                                 
                                 <span class="filesize" >(3418Кб, 2448x3264)</span>
                             </figcaption>
-                            
+                            -->
                             <div class="image-link">
-                                <a  href="http://2ch.hk/b/src/166957697/15132834237990.jpg" target="_blank" onclick="return expand(165,220)">
-                                    <img src="http://2ch.hk/b/thumb/166957697/15132834237990s.jpg" width="165" height="220" alt="2448x3264" class="img preview  ">
+                                <a  href={{url_for('static', filename="img/"+entry.img ) }} target="_blank" ">
+                                    <img src={{url_for('static', filename="thumb/"+entry.img ) }} class="img preview  ">
                                 </a>
                             </div>
                         </figure>
                     
                 </div>
-
+{%endif%}
 
                 <blockquote class="post-message">
                         {{ entry.body }}

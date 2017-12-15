@@ -11,6 +11,14 @@ from flask_script import Command
 
 from app import db
 from app.models.user_models import User#, Role
+import os 
+from shutil import rmtree
+
+
+
+
+
+
 
 class InitDbCommand(Command):
     """ Initialize the database."""
@@ -24,6 +32,15 @@ def init_db():
     db.create_all()
     create_users()
 
+    try:  # Reset saved files on each start
+        rmtree("app/static/img", True)
+        rmtree("app/static/thumb", True)
+        rmtree("app/static/avatar", True)
+        os.mkdir("app/static/img")
+        os.mkdir("app/static/thumb")
+        os.mkdir("app/static/avatar")
+    except OSError:
+        pass
 
 def create_users():
     """ Create users """

@@ -1,0 +1,297 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+0001c8ac1a69_initial_version.py	../dev/migrations/versions/0001c8ac1a69_initial_version.py	1;"	kind:file	line:1
+ADMINS	../dev/app/local_settings.py	/^ADMINS = [$/;"	kind:variable	line:18
+ADMINS	../dev/app/local_settings_example.py	/^ADMINS = [$/;"	kind:variable	line:30
+APP_NAME	../dev/app/settings.py	/^APP_NAME = "Flask-User starter app"$/;"	kind:variable	line:8
+APP_SYSTEM_ERROR_SUBJECT_LINE	../dev/app/settings.py	/^APP_SYSTEM_ERROR_SUBJECT_LINE = APP_NAME + " system error"$/;"	kind:variable	line:9
+Blueprint	../dev/app/views/misc_views.py	/^from flask import Blueprint, redirect, render_template$/;"	kind:namespace	line:6
+BooleanField	../forms.py	/^from wtforms import StringField, TextAreaField, BooleanField$/;"	kind:namespace	line:2
+CSRFProtect	../dev/app/__init__.py	/^from flask_wtf.csrf import CSRFProtect$/;"	kind:namespace	line:15
+CSRF_ENABLED	../dev/app/settings.py	/^CSRF_ENABLED = True$/;"	kind:variable	line:12
+Command	../dev/app/commands/init_db.py	/^from flask_script import Command$/;"	kind:namespace	line:10
+DEBUG	../config.py	/^DEBUG = True$/;"	kind:variable	line:1
+DEBUG	../dev/app/local_settings.py	/^DEBUG = True$/;"	kind:variable	line:8
+DEBUG	../dev/app/local_settings_example.py	/^DEBUG = True$/;"	kind:variable	line:8
+DataRequired	../forms.py	/^from wtforms.validators import DataRequired, Length$/;"	kind:namespace	line:3
+Flask	../app.py	/^from flask import Flask, request, redirect, render_template, url_for, flash$/;"	kind:namespace	line:1
+Flask	../dev/app/__init__.py	/^from flask import Flask$/;"	kind:namespace	line:10
+FlaskForm	../dev/app/models/user_models.py	/^from flask_wtf import FlaskForm$/;"	kind:namespace	line:7
+FlaskForm	../forms.py	/^from flask_wtf import FlaskForm$/;"	kind:namespace	line:1
+HiddenField	../dev/app/__init__.py	/^    from wtforms.fields import HiddenField$/;"	kind:namespace	line:57
+InitDbCommand	../dev/app/commands/__init__.py	/^from .init_db import InitDbCommand/;"	kind:namespace	line:4
+InitDbCommand	../dev/app/commands/init_db.py	/^class InitDbCommand(Command):$/;"	kind:class	line:15
+InitDbCommand	../dev/manage.py	/^from app.commands import InitDbCommand$/;"	kind:namespace	line:12
+LOGIN_DISABLED	../dev/tests/conftest.py	/^    LOGIN_DISABLED=False,  # Enable @register_required$/;"	kind:variable	line:15
+Length	../forms.py	/^from wtforms.validators import DataRequired, Length$/;"	kind:namespace	line:3
+MAIL_DEFAULT_SENDER	../dev/app/local_settings_example.py	/^MAIL_DEFAULT_SENDER = '"Your Name" <yourname@gmail.com>'$/;"	kind:variable	line:28
+MAIL_PASSWORD	../dev/app/local_settings_example.py	/^MAIL_PASSWORD = 'password'$/;"	kind:variable	line:27
+MAIL_PORT	../dev/app/local_settings_example.py	/^MAIL_PORT = 587$/;"	kind:variable	line:23
+MAIL_SERVER	../dev/app/local_settings_example.py	/^MAIL_SERVER = 'smtp.gmail.com'$/;"	kind:variable	line:22
+MAIL_SUPPRESS_SEND	../dev/tests/conftest.py	/^    MAIL_SUPPRESS_SEND=True,  # Disable Flask-Mail send$/;"	kind:variable	line:16
+MAIL_USERNAME	../dev/app/local_settings_example.py	/^MAIL_USERNAME = 'yourname@gmail.com'$/;"	kind:variable	line:26
+MAIL_USE_SSL	../dev/app/local_settings_example.py	/^MAIL_USE_SSL = False$/;"	kind:variable	line:24
+MAIL_USE_TLS	../dev/app/local_settings_example.py	/^MAIL_USE_TLS = True$/;"	kind:variable	line:25
+Mail	../dev/app/__init__.py	/^from flask_mail import Mail$/;"	kind:namespace	line:11
+Manager	../dev/manage.py	/^from flask_script import Manager$/;"	kind:namespace	line:9
+Migrate	../dev/app/__init__.py	/^from flask_migrate import Migrate, MigrateCommand$/;"	kind:namespace	line:12
+MigrateCommand	../dev/app/__init__.py	/^from flask_migrate import Migrate, MigrateCommand$/;"	kind:namespace	line:12
+MigrateCommand	../dev/manage.py	/^from flask_migrate import MigrateCommand$/;"	kind:namespace	line:8
+MyRegisterForm	../dev/app/__init__.py	/^    from .models.user_models import User, MyRegisterForm$/;"	kind:namespace	line:83
+MyRegisterForm	../dev/app/models/user_models.py	/^class MyRegisterForm(RegisterForm):$/;"	kind:class	line:52
+Post	../dev/app/models/user_models.py	/^class Post(db.Model):$/;"	kind:class	line:67
+Post	../dev/app/views/misc_views.py	/^from app.models.user_models import UserProfileForm, Post, PostForm$/;"	kind:namespace	line:11
+Post	../models.py	/^class Post(db.Model):$/;"	kind:class	line:3
+Post	../util.py	/^from models import Post$/;"	kind:namespace	line:3
+PostForm	../app.py	/^from forms import PostForm$/;"	kind:namespace	line:4
+PostForm	../dev/app/models/user_models.py	/^class PostForm(FlaskForm):$/;"	kind:class	line:76
+PostForm	../dev/app/views/misc_views.py	/^from app.models.user_models import UserProfileForm, Post, PostForm$/;"	kind:namespace	line:11
+PostForm	../forms.py	/^class PostForm(FlaskForm):$/;"	kind:class	line:6
+RegisterForm	../dev/app/models/user_models.py	/^from flask_user.forms import RegisterForm$/;"	kind:namespace	line:6
+Role	../dev/app/commands/init_db.py	/^from app.models.user_models import User#, Role$/;"	kind:namespace	line:13
+SECRET_KEY	../config.py	/^SECRET_KEY = 'secret'$/;"	kind:variable	line:2
+SECRET_KEY	../dev/app/local_settings.py	/^SECRET_KEY = 'This is an UNSECURE Secret. CHANGE THIS for production environments.'$/;"	kind:variable	line:13
+SECRET_KEY	../dev/app/local_settings_example.py	/^SECRET_KEY = 'This is an UNSECURE Secret. CHANGE THIS for production environments.'$/;"	kind:variable	line:13
+SERVER_NAME	../dev/tests/conftest.py	/^    SERVER_NAME='localhost',  # Enable url_for() without request context$/;"	kind:variable	line:17
+SQLALCHEMY_DATABASE_URI	../config.py	/^SQLALCHEMY_DATABASE_URI = 'sqlite:\/\/\/posts.db'$/;"	kind:variable	line:3
+SQLALCHEMY_DATABASE_URI	../dev/app/local_settings.py	/^SQLALCHEMY_DATABASE_URI = 'sqlite:\/\/\/..\/app.sqlite'$/;"	kind:variable	line:16
+SQLALCHEMY_DATABASE_URI	../dev/app/local_settings_example.py	/^SQLALCHEMY_DATABASE_URI = 'sqlite:\/\/\/..\/app.sqlite'$/;"	kind:variable	line:16
+SQLALCHEMY_DATABASE_URI	../dev/tests/conftest.py	/^    SQLALCHEMY_DATABASE_URI='sqlite:\/\/\/:memory:',  # In-memory SQLite DB$/;"	kind:variable	line:18
+SQLALCHEMY_TRACK_MODIFICATIONS	../config.py	/^SQLALCHEMY_TRACK_MODIFICATIONS = False/;"	kind:variable	line:4
+SQLALCHEMY_TRACK_MODIFICATIONS	../dev/app/local_settings.py	/^SQLALCHEMY_TRACK_MODIFICATIONS = False    # Avoids a SQLAlchemy Warning$/;"	kind:variable	line:17
+SQLALCHEMY_TRACK_MODIFICATIONS	../dev/app/local_settings_example.py	/^SQLALCHEMY_TRACK_MODIFICATIONS = False    # Avoids a SQLAlchemy Warning$/;"	kind:variable	line:17
+SQLALCHEMY_TRACK_MODIFICATIONS	../dev/app/settings.py	/^SQLALCHEMY_TRACK_MODIFICATIONS = False$/;"	kind:variable	line:15
+SQLAlchemy	../app.py	/^from flask_sqlalchemy import SQLAlchemy$/;"	kind:namespace	line:2
+SQLAlchemy	../dev/app/__init__.py	/^from flask_sqlalchemy import SQLAlchemy$/;"	kind:namespace	line:13
+SQLAlchemyAdapter	../dev/app/__init__.py	/^from flask_user import UserManager, SQLAlchemyAdapter$/;"	kind:namespace	line:14
+StringField	../dev/app/models/user_models.py	/^from wtforms import StringField, TextAreaField, SubmitField, validators$/;"	kind:namespace	line:8
+StringField	../forms.py	/^from wtforms import StringField, TextAreaField, BooleanField$/;"	kind:namespace	line:2
+SubmitField	../dev/app/models/user_models.py	/^from wtforms import StringField, TextAreaField, SubmitField, validators$/;"	kind:namespace	line:8
+TESTING	../dev/tests/conftest.py	/^    TESTING=True,  # Propagate exceptions$/;"	kind:variable	line:14
+TextAreaField	../dev/app/models/user_models.py	/^from wtforms import StringField, TextAreaField, SubmitField, validators$/;"	kind:namespace	line:8
+TextAreaField	../forms.py	/^from wtforms import StringField, TextAreaField, BooleanField$/;"	kind:namespace	line:2
+USER_AFTER_LOGIN_ENDPOINT	../dev/app/settings.py	/^USER_AFTER_LOGIN_ENDPOINT = 'main.home_page'$/;"	kind:variable	line:27
+USER_AFTER_LOGOUT_ENDPOINT	../dev/app/settings.py	/^USER_AFTER_LOGOUT_ENDPOINT = 'main.home_page'$/;"	kind:variable	line:28
+USER_APP_NAME	../dev/app/settings.py	/^USER_APP_NAME = APP_NAME$/;"	kind:variable	line:18
+USER_ENABLE_CHANGE_PASSWORD	../dev/app/settings.py	/^USER_ENABLE_CHANGE_PASSWORD = True  # Allow users to change their password$/;"	kind:variable	line:19
+USER_ENABLE_CHANGE_USERNAME	../dev/app/settings.py	/^USER_ENABLE_CHANGE_USERNAME = False  # Allow users to change their username$/;"	kind:variable	line:20
+USER_ENABLE_CONFIRM_EMAIL	../dev/app/settings.py	/^USER_ENABLE_CONFIRM_EMAIL = False  # Force users to confirm their email$/;"	kind:variable	line:21
+USER_ENABLE_EMAIL	../dev/app/settings.py	/^USER_ENABLE_EMAIL = False  # Register with Email$/;"	kind:variable	line:23
+USER_ENABLE_FORGOT_PASSWORD	../dev/app/settings.py	/^USER_ENABLE_FORGOT_PASSWORD = True  # Allow users to reset their passwords$/;"	kind:variable	line:22
+USER_ENABLE_REGISTRATION	../dev/app/settings.py	/^USER_ENABLE_REGISTRATION = True  # Allow new users to register$/;"	kind:variable	line:24
+USER_ENABLE_RETYPE_PASSWORD	../dev/app/settings.py	/^USER_ENABLE_RETYPE_PASSWORD = True  # Prompt for `retype password` in:$/;"	kind:variable	line:25
+USER_ENABLE_USERNAME	../dev/app/settings.py	/^USER_ENABLE_USERNAME = True  # Register and Login with username$/;"	kind:variable	line:26
+Use	../dev/tests/test_page_urls.py	/^from __future__ import print_function  # Use print() instead of print$/;"	kind:namespace	line:5
+User	../dev/app/__init__.py	/^    from .models.user_models import User, MyRegisterForm$/;"	kind:namespace	line:83
+User	../dev/app/commands/init_db.py	/^from app.models.user_models import User#, Role$/;"	kind:namespace	line:13
+User	../dev/app/models/user_models.py	/^class User(db.Model, UserMixin):$/;"	kind:class	line:13
+UserManager	../dev/app/__init__.py	/^from flask_user import UserManager, SQLAlchemyAdapter$/;"	kind:namespace	line:14
+UserMixin	../dev/app/models/user_models.py	/^from flask_user import UserMixin$/;"	kind:namespace	line:5
+UserProfileForm	../dev/app/models/user_models.py	/^class UserProfileForm(FlaskForm):$/;"	kind:class	line:60
+UserProfileForm	../dev/app/views/misc_views.py	/^from app.models.user_models import UserProfileForm, Post, PostForm$/;"	kind:namespace	line:11
+ValidationError	../dev/app/__init__.py	/^    from wtforms.validators import ValidationError$/;"	kind:namespace	line:68
+WTF_CSRF_ENABLED	../dev/tests/conftest.py	/^    WTF_CSRF_ENABLED=False,  # Disable CSRF form validation$/;"	kind:variable	line:19
+_	../dev/app/views/views.py	/^from .translations import gettext as _$/;"	kind:namespace	line:13
+__init__.py	../dev/app/__init__.py	1;"	kind:file	line:1
+__init__.py	../dev/app/commands/__init__.py	1;"	kind:file	line:1
+__init__.py	../dev/app/models/__init__.py	1;"	kind:file	line:1
+__init__.py	../dev/app/views/__init__.py	1;"	kind:file	line:1
+__init__.py	../dev/tests/__init__.py	1;"	kind:file	line:1
+__tablename__	../dev/app/models/user_models.py	/^    __tablename__ = 'posts'$/;"	kind:variable	line:68
+__tablename__	../dev/app/models/user_models.py	/^    __tablename__ = 'users'$/;"	kind:variable	line:14
+__tablename__	../models.py	/^    __tablename__ = 'posts'$/;"	kind:variable	line:4
+_call_or_get	../dev/app/views/views.py	/^def _call_or_get(function_or_property):$/;"	kind:function	line:27
+_do_login_user	../dev/app/views/views.py	/^def _do_login_user(user, safe_next, remember_me=False):$/;"	kind:function	line:704
+_endpoint_url	../dev/app/views/views.py	/^def _endpoint_url(endpoint):$/;"	kind:function	line:758
+_get_safe_next_param	../dev/app/views/views.py	/^def _get_safe_next_param(param_name, default_endpoint):$/;"	kind:function	line:748
+_send_confirm_email	../dev/app/views/views.py	/^def _send_confirm_email(user, user_email):$/;"	kind:function	line:685
+_send_registered_email	../dev/app/views/views.py	/^def _send_registered_email(user, user_email, require_email_confirmation=True):$/;"	kind:function	line:663
+active	../dev/app/models/user_models.py	/^    active = db.Column('is_active', db.Boolean(), nullable=False, server_default='0')$/;"	kind:variable	line:25
+active	../dev/app/models/user_models.py	/^    active = db.Column(db.Boolean(), nullable=False, server_default='0')$/;"	kind:variable	line:22
+admin_page	../dev/app/views/misc_views.py	/^def admin_page():$/;"	kind:function	line:60
+app	../app.py	/^app = Flask(__name__)$/;"	kind:variable	line:6
+app	../dev/tests/conftest.py	/^def app():$/;"	kind:function	line:31
+app.py	../app.py	1;"	kind:file	line:1
+author	../dev/app/models/user_models.py	/^    author    = db.Column(db.String)$/;"	kind:variable	line:72
+author	../models.py	/^    author    = db.Column(db.String)$/;"	kind:variable	line:7
+body	../dev/app/models/user_models.py	/^    body      = db.Column(db.String)$/;"	kind:variable	line:74
+body	../dev/app/models/user_models.py	/^    body = TextAreaField('body', validators=[validators.DataRequired(), validators.Length(max=1500)])$/;"	kind:variable	line:79
+body	../forms.py	/^    body = TextAreaField('body', validators=[DataRequired(), Length(max=1500)])$/;"	kind:variable	line:9
+body	../models.py	/^    body      = db.Column(db.String)$/;"	kind:variable	line:9
+change_password	../dev/app/views/views.py	/^def change_password():$/;"	kind:function	line:89
+change_username	../dev/app/views/views.py	/^def change_username():$/;"	kind:function	line:126
+client	../dev/tests/conftest.py	/^def client(app):$/;"	kind:function	line:61
+config	../dev/migrations/env.py	/^config = context.config$/;"	kind:variable	line:8
+config.py	../config.py	1;"	kind:file	line:1
+confirm_email	../dev/app/views/views.py	/^def confirm_email(token):$/;"	kind:function	line:36
+confirm_email_required	../dev/app/views/views.py	/^from .decorators import confirm_email_required, login_required$/;"	kind:namespace	line:10
+confirmed_at	../dev/app/models/user_models.py	/^    confirmed_at = db.Column(db.DateTime())$/;"	kind:variable	line:19
+conftest.py	../dev/tests/conftest.py	1;"	kind:file	line:1
+context	../dev/migrations/env.py	/^from alembic import context$/;"	kind:namespace	line:2
+create_app	../dev/app/__init__.py	/^def create_app(extra_config_settings={}):$/;"	kind:function	line:24
+create_app	../dev/manage.py	/^from app import create_app$/;"	kind:namespace	line:11
+create_app	../dev/tests/conftest.py	/^from app import create_app, db as the_db$/;"	kind:namespace	line:10
+create_users	../dev/app/commands/init_db.py	/^def create_users():$/;"	kind:function	line:28
+csrf_protect	../dev/app/__init__.py	/^csrf_protect = CSRFProtect()$/;"	kind:variable	line:19
+current_app	../dev/app/commands/init_db.py	/^from flask import current_app$/;"	kind:namespace	line:9
+current_app	../dev/app/views/views.py	/^from flask import current_app, flash, redirect, request, url_for$/;"	kind:namespace	line:8
+current_app	../dev/migrations/env.py	/^from flask import current_app$/;"	kind:namespace	line:18
+current_user	../dev/app/views/misc_views.py	/^from flask_user import current_user, login_required, roles_accepted$/;"	kind:namespace	line:8
+current_user	../dev/app/views/views.py	/^from flask_login import current_user, login_user, logout_user$/;"	kind:namespace	line:9
+date	../dev/app/models/user_models.py	/^    date      = db.Column(db.String)$/;"	kind:variable	line:71
+date	../models.py	/^    date      = db.Column(db.String)$/;"	kind:variable	line:6
+datetime	../app.py	/^from datetime import datetime$/;"	kind:namespace	line:3
+datetime	../dev/app/__init__.py	/^from datetime import datetime$/;"	kind:namespace	line:7
+datetime	../dev/app/commands/init_db.py	/^import datetime$/;"	kind:namespace	line:7
+datetime	../dev/app/views/misc_views.py	/^from datetime import datetime$/;"	kind:namespace	line:9
+datetime	../dev/app/views/views.py	/^from datetime import datetime$/;"	kind:namespace	line:7
+db	../app.py	/^db = SQLAlchemy(app)$/;"	kind:variable	line:8
+db	../dev/app/__init__.py	/^db = SQLAlchemy()$/;"	kind:variable	line:18
+db	../dev/app/commands/init_db.py	/^from app import db$/;"	kind:namespace	line:12
+db	../dev/app/models/user_models.py	/^from app import db$/;"	kind:namespace	line:9
+db	../dev/app/views/misc_views.py	/^from app import db$/;"	kind:namespace	line:10
+db	../dev/tests/conftest.py	/^def db():$/;"	kind:function	line:37
+db	../models.py	/^from app import db$/;"	kind:namespace	line:1
+db	../util.py	/^from app import db$/;"	kind:namespace	line:4
+delete	../app.py	/^def delete(id):$/;"	kind:function	line:45
+delete	../dev/app/views/misc_views.py	/^def delete(id):$/;"	kind:function	line:46
+delete_post	../dev/app/views/misc_views.py	/^def delete_post(id):$/;"	kind:function	line:18
+delete_post	../util.py	/^def delete_post(id):$/;"	kind:function	line:20
+down_revision	../dev/migrations/versions/0001c8ac1a69_initial_version.py	/^down_revision = None$/;"	kind:variable	line:11
+downgrade	../dev/migrations/versions/0001c8ac1a69_initial_version.py	/^def downgrade():$/;"	kind:function	line:51
+email_action	../dev/app/views/views.py	/^def email_action(id, action):$/;"	kind:function	line:164
+emails	../dev/app/views/views.py	/^from . import emails$/;"	kind:namespace	line:11
+engine_from_config	../dev/migrations/env.py	/^from sqlalchemy import engine_from_config, pool$/;"	kind:namespace	line:3
+env.py	../dev/migrations/env.py	1;"	kind:file	line:1
+fabfile.py	../dev/fabfile.py	1;"	kind:file	line:1
+fileConfig	../dev/migrations/env.py	/^from logging.config import fileConfig$/;"	kind:namespace	line:4
+find_or_create_user	../dev/app/commands/init_db.py	/^def find_or_create_user(first_name, last_name, username, password, roleid = 0):$/;"	kind:function	line:54
+first_name	../dev/app/models/user_models.py	/^    first_name = StringField('First name', validators=[$/;"	kind:variable	line:53
+first_name	../dev/app/models/user_models.py	/^    first_name = StringField('First name', validators=[$/;"	kind:variable	line:61
+first_name	../dev/app/models/user_models.py	/^    first_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')$/;"	kind:variable	line:26
+flash	../app.py	/^from flask import Flask, request, redirect, render_template, url_for, flash$/;"	kind:namespace	line:1
+flash	../dev/app/views/views.py	/^from flask import current_app, flash, redirect, request, url_for$/;"	kind:namespace	line:8
+forgot_password	../dev/app/views/views.py	/^def forgot_password():$/;"	kind:function	line:204
+forms.py	../forms.py	1;"	kind:file	line:1
+get_last_replies	../dev/app/views/misc_views.py	/^def get_last_replies():$/;"	kind:function	line:16
+get_last_replies	../util.py	/^def get_last_replies():$/;"	kind:function	line:7
+home_page	../dev/app/views/misc_views.py	/^def home_page():$/;"	kind:function	line:25
+id	../dev/app/models/user_models.py	/^    id        = db.Column(db.Integer, primary_key = True)$/;"	kind:variable	line:69
+id	../dev/app/models/user_models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	kind:variable	line:15
+id	../models.py	/^    id        = db.Column(db.Integer, primary_key = True)$/;"	kind:variable	line:5
+index	../app.py	/^def index():$/;"	kind:function	line:16
+init_db	../dev/app/commands/init_db.py	/^def init_db():$/;"	kind:function	line:21
+init_db	../dev/tests/conftest.py	/^from app.commands.init_db import init_db$/;"	kind:namespace	line:26
+init_db.py	../dev/app/commands/init_db.py	1;"	kind:file	line:1
+instead	../dev/tests/test_page_urls.py	/^from __future__ import print_function  # Use print() instead of print$/;"	kind:namespace	line:5
+invite	../dev/app/views/views.py	/^def invite():$/;"	kind:function	line:482
+is_hidden_field_filter	../dev/app/__init__.py	/^    def is_hidden_field_filter(field):$/;"	kind:function	line:59
+is_py2	../dev/app/views/views.py	/^is_py2 = (py_version[0] == 2)     #: Python 2.x?$/;"	kind:variable	line:17
+is_py3	../dev/app/views/views.py	/^is_py3 = (py_version[0] == 3)     #: Python 3.x?$/;"	kind:variable	line:18
+last_name	../dev/app/models/user_models.py	/^    last_name = StringField('Last name', validators=[$/;"	kind:variable	line:55
+last_name	../dev/app/models/user_models.py	/^    last_name = StringField('Last name', validators=[$/;"	kind:variable	line:63
+last_name	../dev/app/models/user_models.py	/^    last_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')$/;"	kind:variable	line:27
+local	../dev/fabfile.py	/^from fabric.operations import local$/;"	kind:namespace	line:3
+local_settings.py	../dev/app/local_settings.py	1;"	kind:file	line:1
+local_settings_example.py	../dev/app/local_settings_example.py	1;"	kind:file	line:1
+login	../dev/app/views/views.py	/^def login():$/;"	kind:function	line:230
+login_required	../dev/app/views/misc_views.py	/^from flask_user import current_user, login_required, roles_accepted$/;"	kind:namespace	line:8
+login_required	../dev/app/views/views.py	/^from .decorators import confirm_email_required, login_required$/;"	kind:namespace	line:10
+login_user	../dev/app/views/views.py	/^from flask_login import current_user, login_user, logout_user$/;"	kind:namespace	line:9
+logout	../dev/app/views/views.py	/^def logout():$/;"	kind:function	line:282
+logout_user	../dev/app/views/views.py	/^from flask_login import current_user, login_user, logout_user$/;"	kind:namespace	line:9
+main_blueprint	../dev/app/__init__.py	/^    from app.views.misc_views import main_blueprint$/;"	kind:namespace	line:53
+main_blueprint	../dev/app/views/misc_views.py	/^main_blueprint = Blueprint('main', __name__, template_folder='templates')$/;"	kind:variable	line:14
+make_safe_url	../dev/app/views/views.py	/^def make_safe_url(url):$/;"	kind:function	line:739
+manage.py	../dev/manage.py	1;"	kind:file	line:1
+manage_emails	../dev/app/views/views.py	/^def manage_emails():$/;"	kind:function	line:302
+manager	../dev/manage.py	/^manager = Manager(create_app)$/;"	kind:variable	line:15
+member_page	../dev/app/views/misc_views.py	/^def member_page():$/;"	kind:function	line:53
+migrate	../dev/app/__init__.py	/^migrate = Migrate()$/;"	kind:variable	line:21
+misc_views.py	../dev/app/views/misc_views.py	1;"	kind:file	line:1
+models.py	../models.py	1;"	kind:file	line:1
+my_password_validator	../dev/app/__init__.py	/^    def my_password_validator(form, field):$/;"	kind:function	line:70
+my_username_validator	../dev/app/__init__.py	/^    def my_username_validator(form, field):$/;"	kind:function	line:75
+of	../dev/tests/test_page_urls.py	/^from __future__ import print_function  # Use print() instead of print$/;"	kind:namespace	line:5
+op	../dev/migrations/versions/0001c8ac1a69_initial_version.py	/^from alembic import op$/;"	kind:namespace	line:13
+os	../dev/app/__init__.py	/^import os$/;"	kind:namespace	line:8
+os	../dev/app/local_settings.py	/^import os$/;"	kind:namespace	line:1
+os	../dev/app/local_settings_example.py	/^import os$/;"	kind:namespace	line:1
+os	../dev/app/settings.py	/^import os$/;"	kind:namespace	line:5
+owner	../dev/app/models/user_models.py	/^    owner     = db.Column(db.Integer, default = 0)$/;"	kind:variable	line:70
+password	../dev/app/models/user_models.py	/^    password = db.Column(db.String(255), nullable=False, server_default='')$/;"	kind:variable	line:20
+pool	../dev/migrations/env.py	/^from sqlalchemy import engine_from_config, pool$/;"	kind:namespace	line:3
+print	../dev/tests/test_page_urls.py	/^from __future__ import print_function  # Use print() instead of print$/;"	kind:namespace	line:5
+print_function	../dev/tests/test_page_urls.py	/^from __future__ import print_function  # Use print() instead of print$/;"	kind:namespace	line:5
+py_version	../dev/app/views/views.py	/^from sys import version_info as py_version$/;"	kind:namespace	line:16
+pytest	../dev/tests/conftest.py	/^import pytest$/;"	kind:namespace	line:9
+quote	../dev/app/views/views.py	/^    from urllib import quote, unquote$/;"	kind:namespace	line:21
+quote	../dev/app/views/views.py	/^    from urllib.parse import quote, unquote$/;"	kind:namespace	line:24
+redirect	../app.py	/^from flask import Flask, request, redirect, render_template, url_for, flash$/;"	kind:namespace	line:1
+redirect	../dev/app/views/misc_views.py	/^from flask import Blueprint, redirect, render_template$/;"	kind:namespace	line:6
+redirect	../dev/app/views/views.py	/^from flask import current_app, flash, redirect, request, url_for$/;"	kind:namespace	line:8
+register	../dev/app/views/views.py	/^def register():$/;"	kind:function	line:323
+render	../dev/app/views/views.py	/^def render(*args, **kwargs):$/;"	kind:function	line:31
+render_template	../app.py	/^from flask import Flask, request, redirect, render_template, url_for, flash$/;"	kind:namespace	line:1
+render_template	../dev/app/views/misc_views.py	/^from flask import Blueprint, redirect, render_template$/;"	kind:namespace	line:6
+request	../app.py	/^from flask import Flask, request, redirect, render_template, url_for, flash$/;"	kind:namespace	line:1
+request	../dev/app/views/misc_views.py	/^from flask import request, url_for$/;"	kind:namespace	line:7
+request	../dev/app/views/views.py	/^from flask import current_app, flash, redirect, request, url_for$/;"	kind:namespace	line:8
+request	../util.py	/^from flask import request$/;"	kind:namespace	line:1
+resend_confirm_email	../dev/app/views/views.py	/^def resend_confirm_email():$/;"	kind:function	line:540
+reset_password	../dev/app/views/views.py	/^def reset_password(token):$/;"	kind:function	line:564
+revision	../dev/migrations/versions/0001c8ac1a69_initial_version.py	/^revision = '0001c8ac1a69'$/;"	kind:variable	line:10
+role	../dev/app/models/user_models.py	/^    role = db.Column(db.Integer(), nullable=False,server_default='0')$/;"	kind:variable	line:28
+roles_accepted	../dev/app/views/misc_views.py	/^from flask_user import current_user, login_required, roles_accepted$/;"	kind:namespace	line:8
+run	../dev/app/commands/init_db.py	/^    def run(self):$/;"	kind:member	line:18
+run_migrations_offline	../dev/migrations/env.py	/^def run_migrations_offline():$/;"	kind:function	line:28
+run_migrations_online	../dev/migrations/env.py	/^def run_migrations_online():$/;"	kind:function	line:47
+runserver	../dev/fabfile.py	/^def runserver():$/;"	kind:function	line:7
+sa	../dev/migrations/versions/0001c8ac1a69_initial_version.py	/^import sqlalchemy as sa$/;"	kind:namespace	line:14
+session	../dev/tests/conftest.py	/^def session(db, request):$/;"	kind:function	line:42
+settings.py	../dev/app/settings.py	1;"	kind:file	line:1
+signals	../dev/app/views/views.py	/^from . import signals$/;"	kind:namespace	line:12
+subject	../dev/app/models/user_models.py	/^    subject   = db.Column(db.String)$/;"	kind:variable	line:73
+subject	../dev/app/models/user_models.py	/^    subject = StringField('subject', validators=[validators.Length(min=0, max=50)])$/;"	kind:variable	line:77
+subject	../forms.py	/^    subject = StringField('subject', validators=[Length(min=0, max=50)])$/;"	kind:variable	line:7
+subject	../models.py	/^    subject   = db.Column(db.String)$/;"	kind:variable	line:8
+submit	../dev/app/models/user_models.py	/^    submit = SubmitField('Save')$/;"	kind:variable	line:65
+target_metadata	../dev/migrations/env.py	/^target_metadata = current_app.extensions['migrate'].db.metadata$/;"	kind:variable	line:20
+task	../dev/fabfile.py	/^from fabric.api import task$/;"	kind:namespace	line:4
+teardown	../dev/tests/conftest.py	/^    def teardown():$/;"	kind:function	line:52
+test	../dev/fabfile.py	/^def test():$/;"	kind:function	line:11
+test_cov	../dev/fabfile.py	/^def test_cov():$/;"	kind:function	line:15
+test_page_urls	../dev/tests/test_page_urls.py	/^def test_page_urls(client):$/;"	kind:function	line:9
+test_page_urls.py	../dev/tests/test_page_urls.py	1;"	kind:file	line:1
+the_app	../dev/tests/conftest.py	/^the_app = create_app(dict($/;"	kind:variable	line:13
+the_db	../dev/tests/conftest.py	/^from app import create_app, db as the_db$/;"	kind:namespace	line:10
+time	../util.py	/^from time import time$/;"	kind:namespace	line:2
+tox	../dev/fabfile.py	/^def tox():$/;"	kind:function	line:19
+unauthenticated	../dev/app/views/views.py	/^def unauthenticated():$/;"	kind:function	line:633
+unauthorized	../dev/app/views/views.py	/^def unauthorized():$/;"	kind:function	line:645
+unconfirmed	../dev/app/views/views.py	/^def unconfirmed():$/;"	kind:function	line:622
+unquote	../dev/app/views/views.py	/^    from urllib import quote, unquote$/;"	kind:namespace	line:21
+unquote	../dev/app/views/views.py	/^    from urllib.parse import quote, unquote$/;"	kind:namespace	line:24
+upgrade	../dev/migrations/versions/0001c8ac1a69_initial_version.py	/^def upgrade():$/;"	kind:function	line:17
+url_for	../app.py	/^from flask import Flask, request, redirect, render_template, url_for, flash$/;"	kind:namespace	line:1
+url_for	../dev/app/views/misc_views.py	/^from flask import request, url_for$/;"	kind:namespace	line:7
+url_for	../dev/app/views/views.py	/^from flask import current_app, flash, redirect, request, url_for$/;"	kind:namespace	line:8
+url_for	../dev/tests/test_page_urls.py	/^from flask import url_for$/;"	kind:namespace	line:6
+urlsplit	../dev/app/views/views.py	/^    from urllib.parse import urlsplit, urlunsplit$/;"	kind:namespace	line:23
+urlsplit	../dev/app/views/views.py	/^    from urlparse import urlsplit, urlunsplit$/;"	kind:namespace	line:20
+urlunsplit	../dev/app/views/views.py	/^    from urllib.parse import urlsplit, urlunsplit$/;"	kind:namespace	line:23
+urlunsplit	../dev/app/views/views.py	/^    from urlparse import urlsplit, urlunsplit$/;"	kind:namespace	line:20
+user	../app.py	/^def user(nickname):$/;"	kind:function	line:34
+user_models.py	../dev/app/models/user_models.py	1;"	kind:file	line:1
+user_profile	../dev/app/views/views.py	/^def user_profile():$/;"	kind:function	line:658
+user_profile_page	../dev/app/__init__.py	/^    from .views.misc_views import user_profile_page$/;"	kind:namespace	line:84
+user_profile_page	../dev/app/views/misc_views.py	/^def user_profile_page():$/;"	kind:function	line:66
+username	../dev/app/models/user_models.py	/^    username = db.Column(db.Unicode(255), nullable=False, server_default=u'', unique=True)$/;"	kind:variable	line:18
+util.py	../util.py	1;"	kind:file	line:1
+validators	../dev/app/models/user_models.py	/^from wtforms import StringField, TextAreaField, SubmitField, validators$/;"	kind:namespace	line:8
+views.py	../dev/app/views/views.py	1;"	kind:file	line:1
+with_statement	../dev/migrations/env.py	/^from __future__ import with_statement$/;"	kind:namespace	line:1

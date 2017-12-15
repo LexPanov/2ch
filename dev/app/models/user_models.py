@@ -27,7 +27,7 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')
     last_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')
     role = db.Column(db.Integer(), nullable=False,server_default='0')
-
+    avatar = db.Column(db.String)
     # Relationships
     #roles = db.relationship('Role', secondary='users_roles', backref=db.backref('users', lazy='dynamic'))
 
@@ -64,6 +64,7 @@ class UserProfileForm(FlaskForm):
     last_name = StringField('Last name', validators=[
         validators.DataRequired('Last name is required')])
     submit = SubmitField('Save')
+    file = FileField('file', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'])])
 
 class Post(db.Model):
     __tablename__ = 'posts'
@@ -78,5 +79,5 @@ class Post(db.Model):
 class PostForm(FlaskForm):
     subject = StringField('subject', validators=[validators.Length(min=0, max=50)])
     #name = StringField('name')
-    body = TextAreaField('body', validators=[validators.DataRequired(), validators.Length(max=150)])
+    body = TextAreaField('body', validators=[ validators.Length(min=0, max=150)])
     file = FileField('file', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'])])
