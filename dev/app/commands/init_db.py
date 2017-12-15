@@ -43,40 +43,24 @@ def init_db():
         pass
 
 def create_users():
-    """ Create users """
 
     # Create all tables
     db.create_all()
 
-    # Adding roles
-    #admin_role = find_or_create_role('admin', u'Admin')
-
     # Add users
-    user = find_or_create_user(u'Administrator', u'Adminov', u'admin', 'a', 1)
-    user = find_or_create_user(u'Petr', u'Petrov', u'user', 'a')
-    user = find_or_create_user(u'Moderator', u'Moder', u'admin1', 'a', 1)
-    user = find_or_create_user(u'Ivan', u'Ivanov', u'user1', 'a')
+    user = find_or_create_user(u'admin', 'a', 1)
+    user = find_or_create_user(u'user', 'a')
+    user = find_or_create_user(u'admin1', 'a', 1)
+    user = find_or_create_user(u'user1', 'a')
 
     # Save to DB
     db.session.commit()
 
-'''
-def find_or_create_role(name, label):
-    """ Find existing role or create new role """
-    role = Role.query.filter(Role.name == name).first()
-    if not role:
-        role = Role(name=name, label=label)
-        db.session.add(role)
-    return role
-'''
-
-def find_or_create_user(first_name, last_name, username, password, roleid = 0):
+def find_or_create_user(username, password, roleid = 0):
     """ Find existing user or create new user """
     user = User.query.filter(User.username == username).first()
     if not user:
         user = User(username=username,
-                    first_name=first_name,
-                    last_name=last_name,
                     password=current_app.user_manager.hash_password(password),
                     active=True,
                     confirmed_at=datetime.datetime.utcnow(),

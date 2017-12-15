@@ -6,11 +6,11 @@
 Привет, 
     id = {{current_user.id}}<br>
     username = {{current_user.username}}<br>
+    email = {{current_user.email}}<br>
     confirmed_at = {{current_user.confirmed_at}}<br>
     password = {{current_user.password}}<br>
     active = {{current_user.active}}<br>
-    first_name = {{current_user.first_name}} <br>
-    last_name = {{current_user.last_name}}<br>
+
     role = {{current_user.role}}<br>
     avatar = {{current_user.avatar}}
 <br>
@@ -29,18 +29,5 @@
 <p><a href="{{ url_for('user.change_password') }}">Change password</a></p>
 
 
-<form action="" method="POST" class="form" role="form">
-  <div class="row">
-    <div class="col-sm-6 col-md-5 col-lg-4">
-    {{ form.hidden_tag() }}
-
-    {{ render_field(form.first_name, placeholder = current_user.first_name, tabindex=240) }}
-
-    {{ render_field(form.last_name, placeholder = current_user.last_name, tabindex=250) }}
-
-    {{ render_submit_field(form.submit, tabindex=280) }}
-    </div>
-  </div>
-</form>
 
 {% endblock %}

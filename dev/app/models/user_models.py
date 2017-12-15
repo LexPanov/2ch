@@ -24,8 +24,7 @@ class User(db.Model, UserMixin):
 
     # User information
     active = db.Column('is_active', db.Boolean(), nullable=False, server_default='0')
-    first_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')
-    last_name = db.Column(db.Unicode(50), nullable=False, server_default=u'')
+    email = db.Column(db.Unicode(50), nullable=False, server_default=u'')
     role = db.Column(db.Integer(), nullable=False,server_default='0')
     avatar = db.Column(db.String)
     # Relationships
@@ -51,11 +50,7 @@ class UsersRoles(db.Model):
 # Define the User registration form
 # It augments the Flask-User RegisterForm with additional fields
 class MyRegisterForm(RegisterForm):
-    first_name = StringField('First name', validators=[
-        validators.DataRequired('First name is required')])
-    last_name = StringField('Last name', validators=[
-        validators.DataRequired('Last name is required')])
-
+    email = StringField('Email')
 
 # Define the User profile form
 class UserProfileForm(FlaskForm):
