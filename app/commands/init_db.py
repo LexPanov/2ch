@@ -48,10 +48,10 @@ def create_users():
     db.create_all()
 
     # Add users
-    user = find_or_create_user(u'admin', 'a', 1)
-    user = find_or_create_user(u'user', 'a')
     user = find_or_create_user(u'admin1', 'a', 1)
     user = find_or_create_user(u'user1', 'a')
+    user = find_or_create_user(u'admin2', 'a', 1)
+    user = find_or_create_user(u'user2', 'a')
 
     # Save to DB
     db.session.commit()

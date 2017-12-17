@@ -148,6 +148,7 @@ $('.form-files-drag-area').on('drag dragstart dragend dragover dragenter draglea
 
                     {% if current_user.id == entry.owner %}
                         <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Пожаловаться" data-num="166828387"></a>
+                        <a class="postbtn-options desktop" href="{{ url_for('main.edit', postid = entry.id) }}" data-num="167118342" title="Опции поста"></a>
                     {% elif current_user.role == 1 %}
                         <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Пожаловаться" data-num="166828387"></a>
                     {% endif %}

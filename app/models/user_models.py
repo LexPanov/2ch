@@ -50,7 +50,7 @@ class UsersRoles(db.Model):
 # Define the User registration form
 # It augments the Flask-User RegisterForm with additional fields
 class MyRegisterForm(RegisterForm):
-    email = StringField('Email')
+    email = StringField('Email', validators=[validators.Email()])
 
 # Define the User profile form
 class UserProfileForm(FlaskForm):
