@@ -54,10 +54,6 @@ class MyRegisterForm(RegisterForm):
 
 # Define the User profile form
 class UserProfileForm(FlaskForm):
-    first_name = StringField('First name', validators=[
-        validators.DataRequired('First name is required')])
-    last_name = StringField('Last name', validators=[
-        validators.DataRequired('Last name is required')])
     submit = SubmitField('Save')
     file = FileField('file', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'])])
 
@@ -73,7 +69,6 @@ class Post(db.Model):
 
 class PostForm(FlaskForm):
     subject = StringField('subject', validators=[validators.Length(min=0, max=50)])
-    #name = StringField('name')
-    body = TextAreaField('body', validators=[ validators.Length(min=0, max=150)])
+    body = TextAreaField('body', validators=[ validators.Length(min=0, max=1500)])
     file = FileField('file', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'])])
     submit = SubmitField('Send')

@@ -14,14 +14,13 @@
 
     <div class="norm-reply">
         <div class="reply-label-wrapper">
-            <span class="desktop">[<span class="reply-label reply-label-top">Ответить в тред</span>]</span>
-            <span class="desktop favorite-board" style="display:none;">[ <i title="Добавить в мои доски" class="fa postbtn-favorite-board fa-star" data-num="" style="display: inline-block;"></i> ]</span>
+            <span class="desktop">[<span class="reply-label">Редактировать пост</span>]</span>
 
         </div>
 
         <div id="TopNormalReply" class="TopNormalReply"></div>
 
-        <form id="postform" class="postform tmp_postform" action="" method="post" enctype="multipart/form-data" style="display: none;">
+        <form id="postform" class="postform tmp_postform" action="" method="post" enctype="multipart/form-data" >
             {{ form.hidden_tag() }}
             <hr class="postform-hr">
             <table>
@@ -40,7 +39,6 @@
                         </td>
                         <td class="symbol-counter">
                             <div class="message-sticker-preview"></div>
-                            <span class="message-byte-len">150</span>
                             
                             {{ form.body( id="shampoo", rows="10", placeholder=post.body)}}
                         </td>
@@ -48,48 +46,36 @@
 
 
 
-<tr class="images-area">
-  <td class="label desktop">
-     <label for="formimages">Файлы</label>
-  </td>
-  <td>
-    {{form.file( id="formimages", class="form-files-input-multi")}}
-    <div id="form-files" class="form-files-box">
-    <input type="file" id="formimages" class="form-files-input-multi">
-    <div class="form-files-limits">Макс объем: 20Mб, макс кол-во файлов: 4</div>
-    <div class="form-files-drag-area">Кликни/Брось файл/ctrl-v</div>
-    </div>
-  </td>
-</tr>
+                    <tr class="images-area">
+                      <td class="label desktop">
+                         <label for="formimages">Файлы</label>
+                      </td>
+                      <td>
+                        {{form.file( id="formimages", class="form-files-input-multi")}}
+                        <div id="form-files" class="form-files-box">
+                        <input type="file" id="formimages" class="form-files-input-multi">
+                        <div class="form-files-limits">Макс объем: 20Mб, макс кол-во файлов: 4</div>
+
+                        </div>
+                      </td>
+                    </tr>
 
 
-                    <tr class="rules-area">
-                        <td colspan="2">
-                          <span class="rules">Перед отправкой сообщения прочтите <a href="https://2ch.hk/faq.html" target="_blank">FAQ</a>, <a href="https://2ch.hk/faq/faq_b.html" target="_blank">FAQ раздела</a> и <a href="https://2ch.hk/rules.html" target="_blank">правила раздела</a>.</span><br>
-                          <span class="rules"><a >vk.com/ru2ch</a> - оФФициальная группа VK </span><br>
-                          <span class="rules"><a >2channel.hk</a> - Пасскодач</span><br>
-                        </td>
+
                         
                     </tr>
 {%if post.img %}
+<center>
                 <div class="images images-single ">
-                    
                         <figure class="image">
-                            <!--
-                            <figcaption class="file-attr">
-                                <a class="desktop" target="_blank" href="/b/src/166957697/15132834237990.jpg" id="title-166957697-f9d91536038845d0b867c8eea56b696e" title="668AE0AF-8B16-4626-B74A-74C7B037A6AF.jpeg"> 668AE0AF-8B16-4[...].jpeg</a> 
-                                
-                                <span class="filesize" >(3418Кб, 2448x3264)</span>
-                            </figcaption>
-                            -->
                             <div class="image-link">
                                 <a  href={{url_for('static', filename="img/"+post.img ) }} target="_blank" ">
                                     <img src={{url_for('static', filename="thumb/"+post.img ) }} class="img preview  ">
                                 </a>
                             </div>
                         </figure>
-                    
                 </div>
+</center>
 {%endif%}
 
 
@@ -100,7 +86,7 @@
 
                 </tbody>
             </table>
-            <hr class="postform-hr">
+
         </form>
     </div>
     <hr class="postrekl-hr">

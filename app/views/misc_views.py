@@ -137,7 +137,7 @@ def edit(postid):
 def delete(id):
     post = db.session.query(Post).filter_by(id=id).one()
     if current_user.is_authenticated:
-        if post.owner==current_user.id:
+        if post.owner==current_user.id or current_user.role==1:
             if post.img:
                 filename = post.img
                 path = os.path.join("app/static/img", filename)
@@ -154,7 +154,6 @@ def delete(id):
 def user_avatar_page():
     form = PostForm()
     if request.method == 'POST':
-
 
         filename=''
         if form.file.data:

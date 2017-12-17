@@ -3,11 +3,8 @@
 
 <head>
     <title>/b/ - Бред</title>
-    <!-- Bootstrap CSS and JS
-    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">-->
-    <!-- NEW -->
-    <link id="favicon" rel="shortcut icon" href="http://2ch.hk/favicon.ico">
+
+    <link id="favicon" rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="{{ url_for('static', filename='makaba.css') }}" title="makaba" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='swag.js') }}"></script>    
@@ -21,21 +18,18 @@
 <div>
     <div class="div1">
         <div class="adminbar adminbar-top"> 
-            <a href={{ url_for('main.home_page') }}>Главная</a>
-            <a href={{ url_for('user.register') }}>Регистрация</a>
-            <a href={{ url_for('user.login') }}>Вход</a>
-            <a href={{ url_for('main.user_profile_page') }}>Профиль</a> <!--(login_required: member@example.com / Password1)-->
-            <a href={{ url_for('user.logout') }}>Выход</a>
+            
         </div>
     </div>
     <div class="div2">
             {% if current_user.is_authenticated %}
-                role={{current_user.role}}
-                <a href="{{ url_for('main.user_profile_page') }}">{{ current_user.username }}</a>
+                <!--role={{current_user.role}}-->
+                <a href={{ url_for('main.user_profile_page') }}>{{ current_user.username }}</a>
                 &nbsp; | &nbsp;
-                <a href="{{ url_for('user.logout') }}">Выход</a>
+                <a href={{ url_for('user.logout') }}>Выход</a>
             {% else %}
-                <a href="{{ url_for('user.login') }}">Вход</a>
+                <a href={{ url_for('user.register') }}>Регистрация</a>
+                <a href={{ url_for('user.login') }}>Вход</a>
             {% endif %}
     </div>
 </div>

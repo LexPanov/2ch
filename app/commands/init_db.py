@@ -14,15 +14,8 @@ from app.models.user_models import User#, Role
 import os 
 from shutil import rmtree
 
-
-
-
-
-
-
 class InitDbCommand(Command):
     """ Initialize the database."""
-
     def run(self):
         init_db()
 

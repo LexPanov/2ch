@@ -40,9 +40,9 @@
                         </td>
                         <td class="symbol-counter">
                             <div class="message-sticker-preview"></div>
-                            <span class="message-byte-len">150</span>
+
                             
-                            {{ form.body( id="shampoo", rows="10", placeholder="Комментарий. Макс. длина 150")}}
+                            {{ form.body( id="shampoo", rows="10", placeholder="Комментарий. Макс. длина 1500")}}
                         </td>
                     </tr>
 
@@ -56,38 +56,13 @@
     {{form.file( id="formimages", class="form-files-input-multi")}}
     <div id="form-files" class="form-files-box">
     <input type="file" id="formimages" class="form-files-input-multi">
-    <div class="form-files-limits">Макс объем: 20Mб, макс кол-во файлов: 4</div>
-    <div class="form-files-drag-area">Кликни/Брось файл/ctrl-v</div>
+    <div class="form-files-limits">Макс объем: 20Mб</div>
+
     </div>
   </td>
 </tr>
-<!--
-<script>
-  function handle_hover(e) {
-      e.originalEvent.stopPropagation();
-      e.originalEvent.preventDefault();
-      e.target.className = 'form-files-drag-area';
-      $(e.target).addClass(e.type == 'dragover' ? 'hover' : '');
-  }
-$('.form-files-drag-area').on('drag dragstart dragend dragover dragenter dragleave drop', handle_hover)
-                          .on('drop', function(e) {
-                                      handle_hover(e);
-                                      alert(event.originalEvent.dataTransfer.files);
-                                      $('#formimages').click(e.originalEvent.dataTransfer.files[0]);})
 
-                                      //file_select_handler(e.originalEvent.dataTransfer.files[0]);})
-                          .on('click', function() { $('#formimages').click(); });
-</script>
--->
 
-                    <tr class="rules-area">
-                        <td colspan="2">
-                          <span class="rules">Перед отправкой сообщения прочтите <a href="https://2ch.hk/faq.html" target="_blank">FAQ</a>, <a href="https://2ch.hk/faq/faq_b.html" target="_blank">FAQ раздела</a> и <a href="https://2ch.hk/rules.html" target="_blank">правила раздела</a>.</span><br>
-                          <span class="rules"><a >vk.com/ru2ch</a> - оФФициальная группа VK </span><br>
-                          <span class="rules"><a >2channel.hk</a> - Пасскодач</span><br>
-                        </td>
-                        
-                    </tr>
 
 
 
@@ -98,7 +73,7 @@ $('.form-files-drag-area').on('drag dragstart dragend dragover dragenter draglea
 
                 </tbody>
             </table>
-            <hr class="postform-hr">
+
         </form>
     </div>
     <hr class="postrekl-hr">

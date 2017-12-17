@@ -6,7 +6,6 @@ import os
 
 from flask import Flask
 from flask_mail import Mail
-from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
 from flask_user import UserManager, SQLAlchemyAdapter
 from flask_wtf.csrf import CSRFProtect
@@ -15,7 +14,6 @@ from flask_wtf.csrf import CSRFProtect
 db = SQLAlchemy()
 csrf_protect = CSRFProtect()
 #mail = Mail()
-migrate = Migrate()
 
 
 def create_app(extra_config_settings={}):
@@ -31,18 +29,12 @@ def create_app(extra_config_settings={}):
     app.config.from_object('app.local_settings')
     # Load extra config settings from 'extra_config_settings' param
     app.config.update(extra_config_settings)
-    app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024
+    #app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024
 
-    # Setup Flask-Extensions -- do this _after_ app config has been loaded
 
     # Setup Flask-SQLAlchemy
     db.init_app(app)
 
-    # Setup Flask-Migrate
-    migrate.init_app(app, db)
-
-    # Setup Flask-Mail
-    #mail.init_app(app)
 
     # Setup WTForms CSRFProtect
     csrf_protect.init_app(app)
@@ -59,8 +51,6 @@ def create_app(extra_config_settings={}):
 
     app.jinja_env.globals['bootstrap_is_hidden_field'] = is_hidden_field_filter
 
-    # Setup an error-logger to send emails to app.config.ADMINS
-    #init_email_error_handler(app)
 
     #Setup login-pass validator
     from wtforms.validators import ValidationError

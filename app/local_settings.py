@@ -14,7 +14,5 @@ SECRET_KEY = 'This is an UNSECURE Secret. CHANGE THIS for production environment
 
 # SQLAlchemy settings
 SQLALCHEMY_DATABASE_URI = 'sqlite:///../app.sqlite'
-SQLALCHEMY_TRACK_MODIFICATIONS = False    # Avoids a SQLAlchemy Warning
-ADMINS = [
-    '"Admin One" <admin1@gmail.com>',
-    ]
+#SQLALCHEMY_TRACK_MODIFICATIONS = False    # Avoids a SQLAlchemy Warning
+#ADMINS = ['"Admin One" <admin1@gmail.com>',]

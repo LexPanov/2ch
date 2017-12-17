@@ -98,7 +98,7 @@ With thanks to the following Flask extensions:
 * [Alembic](http://alembic.zzzcomputing.com/)
 * [Flask](http://flask.pocoo.org/)
 * [Flask-Login](https://flask-login.readthedocs.io/)
-* [Flask-Migrate](https://flask-migrate.readthedocs.io/)
+
 * [Flask-Script](https://flask-script.readthedocs.io/)
 * [Flask-User](http://flask-user.readthedocs.io/en/v0.6/)
 
