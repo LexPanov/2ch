@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, redirect, render_template
 from flask import request, url_for
-from flask_user import current_user, login_required, roles_accepted
+from flask_user import current_user, login_required
 from datetime import datetime
 from app import db
-from app.models.user_models import UserProfileForm, Post, PostForm, User
-import locale
-locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
+from app.models.user_models import UserProfileForm, Post, PostForm#, User
+from locale import setlocale, LC_ALL
+setlocale(LC_ALL, 'ru_RU.UTF-8')
 
 import os
 from PIL import Image, ImageFile
-import time
+from time import time
 from hashlib import md5
 
 MAX_IMAGE_SIZE = 1000, 1000
@@ -38,7 +38,7 @@ def home_page():
         if form.file.data:
             data = form.file.data.read()
             hash = md5(data).hexdigest()
-            filename = '{0}-{1}-{2}.jpg'.format(id,int(time.time()),hash)
+            filename = '{0}-{1}-{2}.jpg'.format(id,int(time()),hash)
             path = os.path.join("app/static/img", filename)
             thumb_path = os.path.join("app/static/thumb", filename)
             image_parser = ImageFile.Parser()
@@ -91,7 +91,7 @@ def edit(postid):
                 if form.file.data:
                     data = form.file.data.read()
                     hash = md5(data).hexdigest()
-                    filename = '{0}-{1}-{2}.jpg'.format(id,int(time.time()),hash)
+                    filename = '{0}-{1}-{2}.jpg'.format(id,int(time()),hash)
                     path = os.path.join("app/static/img", filename)
                     thumb_path = os.path.join("app/static/thumb", filename)
                     image_parser = ImageFile.Parser()
@@ -161,7 +161,7 @@ def user_avatar_page():
         if form.file.data:
             data = form.file.data.read()
             hash = md5(data).hexdigest()
-            filename = '{0}-{1}-{2}.jpg'.format(current_user.id,int(time.time()),hash)
+            filename = '{0}-{1}-{2}.jpg'.format(current_user.id,int(time()),hash)
             path = os.path.join("app/static/avatar", filename)
             image_parser = ImageFile.Parser()
             try:

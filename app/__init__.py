@@ -21,28 +21,14 @@ def create_app(extra_config_settings={}):
     """
     # Instantiate Flask
     app = Flask(__name__)
-
-    # Load App Config settings
-    # Load common settings from 'app/settings.py' file
     app.config.from_object('app.settings')
-    # Load local settings from 'app/local_settings.py'
-    app.config.from_object('app.local_settings')
-    # Load extra config settings from 'extra_config_settings' param
-    app.config.update(extra_config_settings)
-    #app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024
-
-
-    # Setup Flask-SQLAlchemy
-    db.init_app(app)
-
-
-    # Setup WTForms CSRFProtect
-    csrf_protect.init_app(app)
+    db.init_app(app) # Setup Flask-SQLAlchemy
+    csrf_protect.init_app(app) # Setup WTForms CSRFProtect
 
     # Register blueprints
     from app.views.misc_views import main_blueprint
     app.register_blueprint(main_blueprint)
-
+    '''
     # Define bootstrap_is_hidden_field for flask-bootstrap's bootstrap_wtf.html
     from wtforms.fields import HiddenField
 
@@ -50,7 +36,7 @@ def create_app(extra_config_settings={}):
         return isinstance(field, HiddenField)
 
     app.jinja_env.globals['bootstrap_is_hidden_field'] = is_hidden_field_filter
-
+    '''
 
     #Setup login-pass validator
     from wtforms.validators import ValidationError
