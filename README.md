@@ -1,2 +1,2 @@
 OH SHI~ IT'S 
-# octochan
+# 2ch
