@@ -1,3 +1,6 @@
 app/__pycache__
 __pycache__
 app.sqlite
+app/static/avatar/
+app/static/img/
+app/static/thumb/
