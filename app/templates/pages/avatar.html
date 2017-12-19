@@ -2,21 +2,6 @@
 
 {% block content %}
 <br>
-<br>
-Привет, 
-    id = {{current_user.id}}<br>
-    username = {{current_user.username}}<br>
-    confirmed_at = {{current_user.confirmed_at}}<br>
-    password = {{current_user.password}}<br>
-    active = {{current_user.active}}<br>
-    role = {{current_user.role}}<br>
-    avatar = {{current_user.avatar}}
-<br>
-<!--
-<img src={{url_for('static', filename="avatar/a.jpg" ) }} class="img preview  ">
--->
-
-
 {% from "common/form_macros.html" import render_field, render_submit_field %}
 
 

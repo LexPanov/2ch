@@ -17,27 +17,15 @@ csrf_protect = CSRFProtect()
 
 
 def create_app(extra_config_settings={}):
-    """Create a Flask applicaction.
-    """
+    """Create a Flask applicaction."""
     # Instantiate Flask
     app = Flask(__name__)
     app.config.from_object('app.settings')
     db.init_app(app) # Setup Flask-SQLAlchemy
     csrf_protect.init_app(app) # Setup WTForms CSRFProtect
-
     # Register blueprints
     from app.views.misc_views import main_blueprint
     app.register_blueprint(main_blueprint)
-    '''
-    # Define bootstrap_is_hidden_field for flask-bootstrap's bootstrap_wtf.html
-    from wtforms.fields import HiddenField
-
-    def is_hidden_field_filter(field):
-        return isinstance(field, HiddenField)
-
-    app.jinja_env.globals['bootstrap_is_hidden_field'] = is_hidden_field_filter
-    '''
-
     #Setup login-pass validator
     from wtforms.validators import ValidationError
 

@@ -183,6 +183,7 @@ def user_avatar_page():
 
             current_user.avatar = filename
             db.session.commit()
+            return redirect(url_for('main.user_profile_page'))
     return render_template('pages/avatar.html', form=form)
 
 @main_blueprint.route('/pages/profile', methods=['GET', 'POST'])
