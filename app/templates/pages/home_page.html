@@ -1,26 +1,22 @@
 {% extends "common/page_base.html" %}
 
 {% block content %}
-    <div class="logo">
-        <a href="/" style="text-decoration:none;color:inherit;">
-            <span id="title">
-                Двач.
-            </span>
-        </a>
-    </div>
-    <hr>
+<div class="logo">
+    <a href="/" style="text-decoration:none;color:inherit;">
+        <span id="title">
+            Двач.
+        </span>
+    </a>
+</div>
+<hr>
 
 <header>
-
     <div class="norm-reply">
         <div class="reply-label-wrapper">
             <span class="desktop">[<span class="reply-label reply-label-top">Ответить в тред</span>]</span>
             <span class="desktop favorite-board" style="display:none;">[ <i title="Добавить в мои доски" class="fa postbtn-favorite-board fa-star" data-num="" style="display: inline-block;"></i> ]</span>
-
         </div>
-
         <div id="TopNormalReply" class="TopNormalReply"></div>
-
         <form id="postform" class="postform tmp_postform" action="{{ url_for('main.home_page') }}" method="post" enctype="multipart/form-data" style="display: none;">
             {{ form.hidden_tag() }}
             <hr class="postform-hr">
@@ -33,44 +29,27 @@
                             <input type="submit" id="submit" name="submit" value="Отправить" class="desktop">
                         </td>
                     </tr>
-
                     <tr class="comment-area">
                         <td class="label desktop">
                             <label for="shampoo">Пост</label>
                         </td>
                         <td class="symbol-counter">
                             <div class="message-sticker-preview"></div>
-
-                            
                             {{ form.body( id="shampoo", rows="10", placeholder="Комментарий. Макс. длина 1500")}}
                         </td>
                     </tr>
-
-
-
-<tr class="images-area">
-  <td class="label desktop">
-     <label for="formimages">Файлы</label>
-  </td>
-  <td>
-    {{form.file( id="formimages", class="form-files-input-multi")}}
-    <div id="form-files" class="form-files-box">
-    <input type="file" id="formimages" class="form-files-input-multi">
-    <div class="form-files-limits">Макс объем: 20Mб</div>
-
-    </div>
-  </td>
-</tr>
-
-
-
-
-
-
-
-
-
-
+                    <tr class="images-area">
+                      <td class="label desktop">
+                         <label for="formimages">Файлы</label>
+                      </td>
+                      <td>
+                        {{form.file( id="formimages", class="form-files-input-multi")}}
+                        <div id="form-files" class="form-files-box">
+                        <input type="file" id="formimages" class="form-files-input-multi">
+                        <div class="form-files-limits">Макс объем: 20Mб</div>
+                        </div>
+                      </td>
+                    </tr>
                 </tbody>
             </table>
 
@@ -80,8 +59,6 @@
 </header>
 
 <body>  
-
-
     <section class="posts">
         <div class="oppost-wrapper">
             <div class="post oppost" id="post-body-162067754" data-num="162067754">
@@ -91,16 +68,15 @@
                         <span class="posttime">30/09/17 Суб 18:21:13&nbsp;</span>
                         <span class="reflink">№162067754</span>
                 </div>
-                    <div class="images images-single ">
-                            <figure class="image">
-                                <div id="exlink-162067754-af066bb0e192adf4d413a3f6b4df905e" class="image-link">
-                                    <a href="" target="_blank" >
-                                        <img src="{{ url_for('static', filename='15067848732280s1.jpg') }}"class="img preview  ">
-                                    </a>
-                                </div>
-                            </figure>
-                    </div>
-                
+                <div class="images images-single ">
+                        <figure class="image">
+                            <div id="exlink-162067754-af066bb0e192adf4d413a3f6b4df905e" class="image-link">
+                                <a href="{{ url_for('static', filename='15067848732280s1.jpg') }}" target="_blank" >
+                                    <img src="{{ url_for('static', filename='15067848732280s1.jpg') }}" class="img preview  ">
+                                </a>
+                            </div>
+                        </figure>
+                </div>
                 <blockquote class="post-message">
                         Это как двач, но только один тред.
                 </blockquote>
@@ -116,44 +92,36 @@
                         <span class="posttime">{{ entry.date }}&nbsp;</span>
                         <span class="reflink">№{{ '%09d' % entry.id  }}</span>
                         {% if entry.subject %}
-                        <span> RE:{{entry.subject}} </span>
+                            <span> RE:{{entry.subject}} </span>
                         {% endif %}
-
                     {% if current_user.is_authenticated %}
-
-                    {% if current_user.id == entry.owner %}
-                        <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Удалить" data-num="166828387"></a>
-                        <a class="postbtn-options desktop" href="{{ url_for('main.edit', postid = entry.id) }}" data-num="167118342" title="Редактировать"></a>
-                    {% elif current_user.role == 1 %}
-                        <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Удалить пост" data-num="166828387"></a>
-                    {% endif %}
-
+                        {% if current_user.id == entry.owner %}
+                            <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Удалить" data-num="166828387"></a>
+                            <a class="postbtn-options desktop" href="{{ url_for('main.edit', postid = entry.id) }}" data-num="167118342" title="Редактировать"></a>
+                        {% elif current_user.role == 1 %}
+                            <a class="postbtn-report desktop" href="{{ url_for('main.delete', id = entry.id) }}"  title="Удалить пост" data-num="166828387"></a>
+                        {% endif %}
                     {% endif %}
 
                 </div>
 
 {%if entry.img %}
                 <div class="images images-single ">
-                    
-                        <figure class="image">
-                            <div class="image-link">
-                                <a  href={{url_for('static', filename="img/"+entry.img ) }} target="_blank" ">
-                                    <img src={{url_for('static', filename="thumb/"+entry.img ) }} class="img preview  ">
-                                </a>
-                            </div>
-                        </figure>
-                    
+                    <figure class="image">
+                        <div class="image-link">
+                            <a  href={{url_for('static', filename="img/"+entry.img ) }} target="_blank" ">
+                                <img src={{url_for('static', filename="thumb/"+entry.img ) }} class="img preview  ">
+                            </a>
+                        </div>
+                    </figure>
                 </div>
 {%endif%}
-
                 <blockquote class="post-message">
-                        {{ entry.body }}
+                    {{ entry.body }}
                 </blockquote>                               
             </div>
         </div>
 {% endfor %}
-
-
     </section>
 </body>
 {% endblock %}

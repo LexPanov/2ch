@@ -9,17 +9,12 @@
         </a>
     </div>
     <hr>
-
 <header>
-
     <div class="norm-reply">
         <div class="reply-label-wrapper">
             <span class="desktop">[<span class="reply-label">Редактировать пост</span>]</span>
-
         </div>
-
         <div id="TopNormalReply" class="TopNormalReply"></div>
-
         <form id="postform" class="postform tmp_postform" action="" method="post" enctype="multipart/form-data" >
             {{ form.hidden_tag() }}
             <hr class="postform-hr">
@@ -32,20 +27,15 @@
                             <input type="submit" id="submit" name="submit" value="Отправить" class="desktop">
                         </td>
                     </tr>
-
                     <tr class="comment-area">
                         <td class="label desktop">
                             <label for="shampoo">Пост</label>
                         </td>
                         <td class="symbol-counter">
-                            <div class="message-sticker-preview"></div>
-                            
+                            <div class="message-sticker-preview"></div>      
                             {{ form.body( id="shampoo", rows="10", placeholder=post.body)}}
                         </td>
                     </tr>
-
-
-
                     <tr class="images-area">
                       <td class="label desktop">
                          <label for="formimages">Файлы</label>
@@ -55,35 +45,22 @@
                         <div id="form-files" class="form-files-box">
                         <input type="file" id="formimages" class="form-files-input-multi">
                         <div class="form-files-limits">Макс объем: 20Mб, макс кол-во файлов: 4</div>
-
                         </div>
                       </td>
                     </tr>
-
-
-
-                        
-                    </tr>
-{%if post.img %}
-<center>
-                <div class="images images-single ">
-                        <figure class="image">
-                            <div class="image-link">
-                                <a  href={{url_for('static', filename="img/"+post.img ) }} target="_blank" ">
-                                    <img src={{url_for('static', filename="thumb/"+post.img ) }} class="img preview  ">
-                                </a>
-                            </div>
-                        </figure>
-                </div>
-</center>
-{%endif%}
-
-
-
-
-
-
-
+                    {%if post.img %}
+                    <center>
+                        <div class="images images-single ">
+                                <figure class="image">
+                                    <div class="image-link">
+                                        <a  href={{url_for('static', filename="img/"+post.img ) }} target="_blank" ">
+                                            <img src={{url_for('static', filename="thumb/"+post.img ) }} class="img preview  ">
+                                        </a>
+                                    </div>
+                                </figure>
+                        </div>
+                    </center>
+                    {%endif%}
                 </tbody>
             </table>
 
@@ -91,9 +68,6 @@
     </div>
     <hr class="postrekl-hr">
 </header>
-
-
-
     </section>
 </body>
 {% endblock %}

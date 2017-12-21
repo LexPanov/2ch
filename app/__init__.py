@@ -46,6 +46,3 @@ def create_app(extra_config_settings={}):
                                username_validator=my_username_validator
                                )
     return app
-
-
-

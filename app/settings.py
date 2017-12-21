@@ -3,7 +3,7 @@ import os
 APP_NAME = "2ch"
 
 # Flask settings
-DEBUG = False
+DEBUG = True
 CSRF_ENABLED = True
 MAX_CONTENT_LENGTH = 20 * 1024 * 1024 #20Mb max upload
 # SQLAlchemy settings

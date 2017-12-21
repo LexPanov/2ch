@@ -5,7 +5,7 @@ from flask import request, url_for
 from flask_user import current_user, login_required
 from datetime import datetime
 from app import db
-from app.models.user_models import UserProfileForm, Post, PostForm#, User
+from app.models.user_models import UserProfileForm, Post, PostForm
 from locale import setlocale, LC_ALL
 setlocale(LC_ALL, 'ru_RU.UTF-8')
 import os
