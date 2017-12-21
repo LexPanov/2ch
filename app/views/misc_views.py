@@ -8,7 +8,6 @@ from app import db
 from app.models.user_models import UserProfileForm, Post, PostForm#, User
 from locale import setlocale, LC_ALL
 setlocale(LC_ALL, 'ru_RU.UTF-8')
-
 import os
 from PIL import Image, ImageFile
 from time import time
@@ -19,7 +18,6 @@ MAX_THUMB_SIZE = 220, 220
 MAX_AVATAR_SIZE = 400, 400
 
 main_blueprint = Blueprint('main', __name__, template_folder='templates')
-
 
 @main_blueprint.route('/', methods = ['GET', 'POST'])
 def home_page():
@@ -33,7 +31,6 @@ def home_page():
             author = "Аноним"
             owner = 0
             id = 0
-
         filename=''
         if form.file.data:
             data = form.file.data.read()
@@ -56,7 +53,6 @@ def home_page():
                 thumb = thumb.convert('RGB')
             image.save(path)
             thumb.save(thumb_path)
-
         post = Post(date    = datetime.now().strftime("%d/%m/%y %a %H:%M:%S"),
                     author  = author,
                     subject = form.subject.data,
@@ -68,7 +64,6 @@ def home_page():
         db.session.commit()
         return redirect(url_for('main.home_page'))
     posts = db.session.query(Post).order_by(db.text('id desc'))
-
     return render_template('pages/home_page.html', form=form, posts=posts[::-1])
 
 @main_blueprint.route("/edit/<postid>", methods = ['GET', 'POST'])
@@ -86,7 +81,6 @@ def edit(postid):
                     author = "Аноним"
                     owner = 0
                     id = 0
-
                 filename=''
                 if form.file.data:
                     data = form.file.data.read()
@@ -109,7 +103,6 @@ def edit(postid):
                         thumb = thumb.convert('RGB')
                     image.save(path)
                     thumb.save(thumb_path)
-
                 post_mod = Post(id = postid,
                             date    = datetime.now().strftime("%d/%m/%y %a %H:%M:%S"),
                             author  = author,
@@ -118,14 +111,12 @@ def edit(postid):
                             owner   = owner,
                             img     = filename
                             )
-
                 if post.img:
                     filename = post.img
                     path = os.path.join("app/static/img", filename)
                     thumb_path = os.path.join("app/static/thumb", filename)
                     os.remove(path)
                     os.remove(thumb_path)
-
                 db.session.delete(post)
                 db.session.commit()
                 db.session.add(post_mod)
@@ -133,7 +124,6 @@ def edit(postid):
                 return redirect(url_for('main.home_page'))
             return render_template("pages/edit.html", form=form, post=post)
     return redirect(url_for('main.home_page'))
-
 
 @main_blueprint.route('/delete/<id>')
 def delete(id):
@@ -150,13 +140,11 @@ def delete(id):
         db.session.commit()
     return redirect(url_for('main.home_page'))
 
-
 @main_blueprint.route('/pages/avatar', methods=['GET', 'POST'])
 @login_required
 def user_avatar_page():
     form = PostForm()
     if request.method == 'POST':
-
         filename=''
         if form.file.data:
             data = form.file.data.read()
@@ -179,8 +167,6 @@ def user_avatar_page():
                 pat = os.path.join("app/static/avatar", name)
                 os.remove(pat)
             image.save(path)
-
-
             current_user.avatar = filename
             db.session.commit()
             return redirect(url_for('main.user_profile_page'))

@@ -1,4 +1,3 @@
-#import datetime
 from flask import current_app
 from flask_script import Command
 from app import db
@@ -7,12 +6,10 @@ from os import mkdir
 from shutil import rmtree
 
 class InitDbCommand(Command):
-    """ Initialize the database."""
     def run(self):
         init_db()
 
 def init_db():
-    """ Initialize the database."""
     db.drop_all()
     db.create_all()
     create_users()
@@ -35,11 +32,9 @@ def create_users():
     db.session.commit()
 
 def create_user(username, password, roleid = 0):
-    """ Create new user """
     user = User(username=username,
                 password=current_app.user_manager.hash_password(password),
                 active=True,
-                #confirmed_at=datetime.datetime.utcnow(),
                 role=roleid)
     db.session.add(user)
     return user

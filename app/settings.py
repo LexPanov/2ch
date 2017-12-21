@@ -3,9 +3,9 @@ import os
 APP_NAME = "2ch"
 
 # Flask settings
-DEBUG = True
+DEBUG = False
 CSRF_ENABLED = True
-
+MAX_CONTENT_LENGTH = 20 * 1024 * 1024 #20Mb max upload
 # SQLAlchemy settings
 SQLALCHEMY_DATABASE_URI = 'sqlite:///../app.sqlite'
 
@@ -27,11 +27,6 @@ USER_AFTER_LOGOUT_ENDPOINT = 'main.home_page'
 USER_SEND_PASSWORD_CHANGED_EMAIL = False
 USER_SEND_REGISTERED_EMAIL = False
 USER_SEND_USERNAME_CHANGED_EMAIL = False
-
-
-MAX_CONTENT_LENGTH = 20 * 1024 * 1024
-
-
 
 # DO NOT use Unsecure Secrets in production environments
 # Generate a safe one with:
